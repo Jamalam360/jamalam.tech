@@ -26,7 +26,7 @@ const pages = [
 
 export default function Navbar({ path }: { path: string }) {
   return (
-    <div class={tw`flex flex-row`}>
+    <div class={tw`flex flex(row wrap)`}>
       {pages.map((page) => (
         <a
           class={tw`text(xl) px-4 font-semibold hover:font-bold duration-75 ${

@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar.tsx";
 
 export default function Page(props: PageProps) {
   return (
-    <div class={tw`p-8 flex flex-col justify-center items-center`}>
+    <div class={tw`p-8 flex flex(col wrap) justify-center items-center`}>
       <Navbar path={props.route} />
       <Intro />
     </div>
@@ -14,7 +14,9 @@ export default function Page(props: PageProps) {
 
 function Intro() {
   return (
-    <div class={tw`w-10/12 flex flex-row justify-center items-center pt-24`}>
+    <div
+      class={tw`w-10/12 flex flex(row wrap) justify-center items-center pt-24`}
+    >
       <div class={tw`px-6`}>
         <p class={tw`text-4xl font-semibold py-2`}>
           Hi! I'm <span class={tw`${emphasised_text}`}>Jamalam</span>.
