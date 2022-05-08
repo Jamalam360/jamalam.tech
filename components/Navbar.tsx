@@ -19,6 +19,10 @@ const pages = [
     path: "/posts",
   },
   {
+    name: "tech",
+    path: "/tech",
+  },
+  {
     name: "links",
     path: "/links",
   },
