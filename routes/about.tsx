@@ -5,11 +5,11 @@ import Navbar from "../components/Navbar.tsx";
 
 export default function Page(props: PageProps) {
   return (
-    <div class={tw`p-8 flex flex(col wrap) justify-center items-center`}>
+    <div class={tw`p-8 flex flex-col justify-center items-center`}>
       <Navbar path={props.route} />
       <div
         class={tw
-          `w-10/12 flex flex(col wrap) justify-center items-center pt-24 text(xl center) font-semibold`}
+          `w-10/12 flex flex-col justify-center items-center pt-24 text(xl center) font-semibold`}
       >
         <p class={tw`p-4`}>
           I'm <span class={tw`${emphasised_text}`}>Jamalam</span>, or{" "}

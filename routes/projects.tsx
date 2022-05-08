@@ -5,17 +5,17 @@ import Navbar from "../components/Navbar.tsx";
 
 export default function Page(props: PageProps) {
   return (
-    <div class={tw`p-8 flex flex(col wrap) justify-center items-center`}>
+    <div class={tw`p-8 flex flex-col justify-center items-center`}>
       <Navbar path={props.route} />
       <div
         class={tw
-          `w-10/12 flex flex(col wrap) justify-center items-center pt-24 text(xl center) font-semibold`}
+          `w-10/12 flex flex-col justify-center items-center pt-24 text(xl center) font-semibold`}
       >
         <details>
           <summary class={tw`select-none ${emphasised_text}`}>
             Pinguino
           </summary>
-          <div class={tw`flex flex(col wrap) items-center`}>
+          <div class={tw`flex flex-col items-center`}>
             <p class={tw`p-4`}>
               Pinguino is a Discord bot that I created to help my friends and I
               record out of context quotes via Discord, and it quickly grew out
@@ -49,7 +49,7 @@ export default function Page(props: PageProps) {
           <summary class={tw`select-none ${emphasised_text}`}>
             Pinguino
           </summary>
-          <div class={tw`flex flex(col wrap) items-center`}>
+          <div class={tw`flex flex-col sm:flex-wrap items-center`}>
             <p class={tw`p-4`}>
               Pinguino is a Discord bot that I created to help my friends and I
               record out of context quotes via Discord, and it quickly grew out
