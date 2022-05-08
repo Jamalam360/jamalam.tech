@@ -20,7 +20,7 @@ export default function Page(props: PageProps) {
       <Navbar path={props.route} />
       <div
         class={tw
-          `${flexCol} w-10/12 space-y-4 pt-24 text(xl center) font-semibold`}
+          `${flexCol} w-10/12 space-y-4 pt-12 text(xl center) font-semibold`}
       >
         <Minecraft />
         <Discord />

@@ -15,7 +15,7 @@ export default function Page(props: PageProps) {
     >
       <Navbar path={props.route} />
       <div
-        class={tw`${flexCol} w-10/12 pt-24 text(xl center) font-semibold`}
+        class={tw`${flexCol} w-10/12 pt-12 text(xl center) font-semibold`}
       >
         <Hardware />
         <Software />

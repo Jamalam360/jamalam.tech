@@ -18,7 +18,7 @@ function Intro() {
   return (
     <div
       class={tw
-        `w-10/12 flex flex(row wrap) md:flex-nowrap justify-center items-center pt-24`}
+        `w-10/12 flex flex(row wrap) md:flex-nowrap justify-center items-center pt-12`}
     >
       <div class={tw`px-6`}>
         <p class={tw`text-4xl font-semibold py-2`}>
