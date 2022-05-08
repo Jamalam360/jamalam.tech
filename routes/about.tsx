@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar.tsx";
 
 export default function Page(props: PageProps) {
   const flexCol = tw`flex flex-col justify-center items-center`;
-  const paragraph = tw`p-4`;
+  const paragraph = tw`py-4`;
   const emphasised = tw`${emphasised_text}`;
 
   return (

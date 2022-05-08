@@ -1,6 +1,6 @@
 {
   "tasks": {
     "start": "fresh manifest && deno run -A --watch --no-check main.ts",
-    "tunnel": "xdg-open http://localhost:4040 && ngrok http 8080"
+    "tunnel": "xdg-open http://localhost:4040 && ngrok http 8000"
   }
 }

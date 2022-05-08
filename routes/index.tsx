@@ -20,7 +20,7 @@ function Intro() {
       class={tw
         `w-10/12 flex flex(row wrap) md:flex-nowrap justify-center items-center pt-12`}
     >
-      <div class={tw`px-6`}>
+      <div class={tw`px-2`}>
         <p class={tw`text-4xl font-semibold py-2`}>
           Hi! I'm <span class={tw`${emphasised_text}`}>Jamalam</span>.
         </p>
@@ -35,7 +35,7 @@ function Intro() {
         </p>
       </div>
       <img
-        class={tw`w-80 px-6`}
+        class={tw`w-80 px-2 pt-4 md:pt-2`}
         src="/placeholder.png"
         alt="Profile Picture"
       />

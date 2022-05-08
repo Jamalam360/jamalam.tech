@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar.tsx";
 
 const title = `${emphasised_text} text-3xl font-semibold py-2`;
 const summary = `text-center select-none hover:font-bold duration-75`;
-const paragraph = `p-4`;
+const paragraph = `py-4`;
 const image = `w-64 rounded-xl`;
 const detailsWrapper =
   `flex flex-col items-center justify-start items-start text-left`;

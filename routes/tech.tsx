@@ -4,7 +4,7 @@ import { emphasised_text, h, PageProps, tw } from "../client_deps.ts";
 import Navbar from "../components/Navbar.tsx";
 
 const title = `${emphasised_text} text-3xl font-semibold py-2`;
-const paragraph = `p-4`;
+const paragraph = `py-4`;
 
 export default function Page(props: PageProps) {
   const flexCol = tw`flex flex-col justify-center items-center`;
