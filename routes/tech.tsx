@@ -18,6 +18,7 @@ export default function Page(props: PageProps) {
         class={tw`${flexCol} w-10/12 pt-24 text(xl center) font-semibold`}
       >
         <Hardware />
+        <Software />
       </div>
     </div>
   );
@@ -32,23 +33,51 @@ function Hardware() {
           I currently have a custom PC as my main machine, where I do most of my
           development.
         </p>
-        <ul class={tw`${paragraph} text-center`}>
-          <li>CPU: AMD Athlon X4 860K</li>
-          <li>GPU: Nvidia GeForce GTX 1050ti</li>
-          <li>RAM: 16GB DDR3</li>
-          <li>OS: Windows 10</li>
-        </ul>
+        <div class={tw`flex justify-center`}>
+          <ul class={tw`${paragraph}`}>
+            <li>CPU: AMD Athlon X4 860K</li>
+            <li>GPU: Nvidia GeForce GTX 1050ti</li>
+            <li>RAM: 16GB DDR3</li>
+            <li>OS: Windows 10</li>
+          </ul>
+        </div>
         <p class={tw`${paragraph}`}>
           I also have a Dell Insprion laptop which I use for development on the
           go - hopefully it will get replaced by a{" "}
           <a class={tw`underline`} href="https://frame.work/">Framework</a>{" "}
           laptop soon.
         </p>
-        <ul class={tw`${paragraph} text-center`}>
-          <li>CPU: Intel i3-7100U</li>
-          <li>GPU: Integrated Graphics</li>
-          <li>RAM: 8GB DDR4</li>
-          <li>OS: ZorinOS 16</li>
+        <div class={tw`flex justify-center`}>
+          <ul class={tw`${paragraph}`}>
+            <li>CPU: Intel i3-7100U</li>
+            <li>GPU: Integrated Graphics</li>
+            <li>RAM: 8GB DDR4</li>
+            <li>OS: ZorinOS 16</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Software() {
+  return (
+    <div class={tw`flex flex-col`}>
+      <p class={tw`${title}`}>Software</p>
+      <div class={tw`justify-start items-start text-left`}>
+        <ul class={tw`${paragraph}`}>
+          <li>Google Tasks and Calendar - to-do list and organisation</li>
+          <li>IntelliJ Idea - Java and Kotlin development</li>
+          <li>VS Code - TypeScript development</li>
+          <li>GitHub/Git - VCS</li>
+          <li>-</li>
+          <li>Deno - JS/TS runtime</li>
+          <li>Preact, fresh, and Tailwind - frontend web development</li>
+          <li>Oak Server - Deno based HTTP server</li>
+          <li>Mongo - database</li>
+          <li>Fabric - mod development</li>
+          <li>JUnit/GameTest API - testing</li>
+          <li>Gradle - Java/Kotlin build system</li>
         </ul>
       </div>
     </div>
