@@ -66,11 +66,13 @@ function Software() {
       <p class={tw`${title}`}>Software</p>
       <div class={tw`justify-start items-start text-left`}>
         <ul class={tw`${paragraph}`}>
-          <li>Google Tasks and Calendar - to-do list and organisation</li>
+          <li>
+            Google Tasks and Google Calendar - to-do list and organisation
+          </li>
           <li>IntelliJ Idea - Java and Kotlin development</li>
           <li>VS Code - TypeScript development</li>
           <li>GitHub/Git - VCS</li>
-          <li>-</li>
+          <br />
           <li>Deno - JS/TS runtime</li>
           <li>Preact, fresh, and Tailwind - frontend web development</li>
           <li>Oak Server - Deno based HTTP server</li>
