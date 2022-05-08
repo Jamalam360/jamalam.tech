@@ -17,15 +17,15 @@ const links = [
 ];
 
 export default function Page(props: PageProps) {
+  const flexCol = tw`flex flex-col justify-center items-center`;
+
   return (
     <div
-      class={tw
-        `p-8 flex flex-col justify-center items-center overflow-y-scroll`}
+      class={tw`${flexCol} p-8 overflow-y-scroll`}
     >
       <Navbar path={props.route} />
       <div
-        class={tw
-          `w-10/12 flex flex-col justify-center items-center pt-24 text(xl center) font-semibold`}
+        class={tw`${flexCol} w-10/12 pt-24 text(xl center) font-semibold`}
       >
         {links.map((link) => <Link name={link.name} path={link.path} />)}
       </div>

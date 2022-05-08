@@ -3,16 +3,23 @@ import { emphasised_text, h, PageProps, tw } from "../client_deps.ts";
 
 import Navbar from "../components/Navbar.tsx";
 
+const title = `${emphasised_text} text-3xl font-semibold py-2`;
+const summary = `select-none hover:font-bold duration-75`;
+const paragraph = `p-4`;
+const image = `w-64 rounded-xl`;
+const detailsWrapper = `flex flex-col items-center`;
+
 export default function Page(props: PageProps) {
+  const flexCol = tw`flex flex-col justify-center items-center`;
+
   return (
     <div
-      class={tw
-        `p-8 flex flex-col justify-center items-center overflow-y-scroll`}
+      class={tw`${flexCol} p-8 overflow-y-scroll`}
     >
       <Navbar path={props.route} />
       <div
         class={tw
-          `w-10/12 flex flex-col justify-center items-center space-y-4 pt-24 text(xl center) font-semibold`}
+          `${flexCol} w-10/12 space-y-4 pt-24 text(xl center) font-semibold`}
       >
         <Minecraft />
         <Discord />
@@ -25,7 +32,7 @@ export default function Page(props: PageProps) {
 function Minecraft() {
   return (
     <div>
-      <p class={tw`${emphasised_text} text-3xl font-semibold py-2`}>
+      <p class={tw`${title}`}>
         Minecraft
       </p>
     </div>
@@ -35,13 +42,13 @@ function Minecraft() {
 function Discord() {
   return (
     <div>
-      <p class={tw`${emphasised_text} text-3xl font-semibold py-2`}>Discord</p>
+      <p class={tw`${title}`}>Discord</p>
       <details>
-        <summary class={tw`select-none hover:font-bold duration-75`}>
+        <summary class={tw`${summary}`}>
           Pinguino
         </summary>
-        <div class={tw`flex flex-col items-center`}>
-          <p class={tw`p-4`}>
+        <div class={tw`${detailsWrapper}`}>
+          <p class={tw`${paragraph}`}>
             Pinguino is a Discord bot that I created to help my friends and I
             record out of context quotes via Discord, and it quickly grew out of
             hand from there.
@@ -49,9 +56,9 @@ function Discord() {
           <img
             src="https://user-images.githubusercontent.com/56727311/136711100-33c45895-51dd-4c3e-9937-c02aebae18dc.jpg"
             alt="Pinguino Icon"
-            class={tw`w-64 rounded-xl`}
+            class={tw`${image}`}
           />
-          <p class={tw`p-4`}>
+          <p class={tw`${paragraph}`}>
             At the moment, it's hurtling towards a V1.0.0 release, and has over
             10,000 lines of code powering all of its features - from moderation,
             to fun, to spam protection. Pinguino is automatically deployed to my
@@ -59,7 +66,7 @@ function Discord() {
             configuration dashboard for it using{" "}
             <a class={tw`underline`} href="https://fresh.deno.dev/">fresh</a>.
           </p>
-          <p class={tw`p-4`}>
+          <p class={tw`${paragraph}`}>
             Pingunio's main source code is written in{" "}
             <span class={tw`${emphasised_text}`}>Kotlin</span>, with the KordEx
             framework. It interacts with a MongoDB database with a library
@@ -75,7 +82,7 @@ function Discord() {
               Deno Deploy
             </a>.
           </p>
-          <p class={tw`p-4`}>
+          <p class={tw`${paragraph}`}>
             You can find Pinguino's source on{" "}
             <a
               class={tw`underline`}
@@ -87,11 +94,11 @@ function Discord() {
         </div>
       </details>
       <details>
-        <summary class={tw`select-none hover:font-bold duration-75`}>
+        <summary class={tw`${summary}`}>
           NoArchive
         </summary>
-        <div class={tw`flex flex-col items-center`}>
-          <p class={tw`p-4`}>
+        <div class={tw`${detailsWrapper}`}>
+          <p class={tw`${paragraph}`}>
             NoArchive was a Discord bot created using{" "}
             <span class={tw`${emphasised_text}`}>Kotlin</span>{" "}
             and KordEx, like Pinguino. Its purpose was to prevent threads in our
@@ -102,9 +109,9 @@ function Discord() {
           <img
             src="https://top.gg/_next/image?url=https%3A%2F%2Fimages.discordapp.net%2Favatars%2F883352428546756638%2F17d825efba27aa2f16105c41a612beca.png%3Fsize%3D128&w=128&q=75"
             alt="NoArchive Icon"
-            class={tw`w-64 rounded-xl`}
+            class={tw`${image}`}
           />
-          <p class={tw`p-4`}>
+          <p class={tw`${paragraph}`}>
             NoArchive has been marked deprecated as Pinguino now has this
             feature, but you can find the source code on{" "}
             <a
@@ -123,7 +130,7 @@ function Discord() {
 function Web() {
   return (
     <div>
-      <p class={tw`${emphasised_text} text-3xl font-semibold py-2`}>Web</p>
+      <p class={tw`${title}`}>Web</p>
     </div>
   );
 }
