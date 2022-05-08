@@ -3,6 +3,9 @@ import { emphasised_text, h, PageProps, tw } from "../client_deps.ts";
 
 import Navbar from "../components/Navbar.tsx";
 
+//TODO(Jamalam360): Instead of center aligning all text, make it so that it's
+// left-aligned in a div that is center aligned.
+
 export default function Page(props: PageProps) {
   return (
     <div class={tw`p-8 flex flex-col justify-center items-center`}>
