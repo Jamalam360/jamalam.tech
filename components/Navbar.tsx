@@ -11,16 +11,16 @@ const pages = [
     path: "/about",
   },
   {
+    name: "skills",
+    path: "/skills",
+  },
+  {
     name: "projects",
     path: "/projects",
   },
   {
     name: "posts",
     path: "/posts",
-  },
-  {
-    name: "tech",
-    path: "/tech",
   },
   {
     name: "links",

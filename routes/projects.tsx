@@ -1,5 +1,11 @@
 /** @jsx h */
-import { emphasised_text, h, PageProps, tw } from "../client_deps.ts";
+import {
+  ComponentProps,
+  emphasised_text,
+  h,
+  PageProps,
+  tw,
+} from "../client_deps.ts";
 
 import Navbar from "../components/Navbar.tsx";
 
@@ -133,7 +139,26 @@ function Discord() {
 function Web() {
   return (
     <div>
-      <p class={tw`${title}`}>Web</p>
+      <p class={tw`${title}`}>Pinguino Dashboard</p>
+      <div class={tw`flex flex-col items-center`}>
+        <details>
+          <summary class={tw`${summary}`}>
+            Pinguino
+          </summary>
+          <div class={tw`${detailsWrapper}`}>
+            <p class={tw`${paragraph}`}>
+              Pinguino, the Discord bot mentioned above, has an in-development
+              web dashboard that is able to completeley configure the bot per
+              server by using a REST API that accesses the bot's Mongo database.
+            </p>
+            <p class={tw`${paragraph}`}>
+              The dashboard is being built with{" "}
+              <span class={tw`${emphasised_text}`}>TypeScript</span> and{" "}
+              <span class={tw`${emphasised_text}`}>fresh</span>.
+            </p>
+          </div>
+        </details>
+      </div>
     </div>
   );
 }
