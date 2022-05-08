@@ -14,7 +14,7 @@ export default function Page(props: PageProps) {
     >
       <Navbar path={props.route} />
       <div
-        class={tw`${flexCol} w-10/12 pt-24 text(xl center) font-semibold`}
+        class={tw`${flexCol} w-10/12 pt-24 text-xl font-semibold`}
       >
         <p class={paragraph}>
           I'm <span class={emphasised}>Jamalam</span>, or{" "}
@@ -42,7 +42,8 @@ export default function Page(props: PageProps) {
           {" "}
           <span class={emphasised}>Preact</span>,{" "}
           <span class={emphasised}>Oak</span>, and{" "}
-          <span class={emphasised}>Deno</span>.
+          <span class={emphasised}>Deno</span>. I use{" "}
+          <span class={emphasised}>TailwindCSS</span> for styling.
         </p>
       </div>
     </div>
