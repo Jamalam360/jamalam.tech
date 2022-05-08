@@ -35,8 +35,8 @@ function Intro() {
           <span class={tw`${emphasised_text}`}>
             software developer
           </span>{" "}
-          from the UK, working on Minecraft, Discord bots, and the web. I always
-          strive to make the{" "}
+          from the UK working on Minecraft modifications, Discord bots, and the
+          web. I always strive to make the{" "}
           <span class={tw`${emphasised_text}`}>best product</span> I can.
         </p>
       </div>
