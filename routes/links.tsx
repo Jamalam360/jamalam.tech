@@ -18,7 +18,10 @@ const links = [
 
 export default function Page(props: PageProps) {
   return (
-    <div class={tw`p-8 flex flex-col justify-center items-center`}>
+    <div
+      class={tw
+        `p-8 flex flex-col justify-center items-center overflow-y-scroll`}
+    >
       <Navbar path={props.route} />
       <div
         class={tw

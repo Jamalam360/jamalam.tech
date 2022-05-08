@@ -6,9 +6,14 @@ import Navbar from "../components/Navbar.tsx";
 //TODO(Jamalam360): Instead of center aligning all text, make it so that it's
 // left-aligned in a div that is center aligned.
 
+//TODO(Jamalam360): Extract common styles to vars
+
 export default function Page(props: PageProps) {
   return (
-    <div class={tw`p-8 flex flex-col justify-center items-center`}>
+    <div
+      class={tw
+        `p-8 flex flex-col justify-center items-center overflow-y-scroll`}
+    >
       <Navbar path={props.route} />
       <Intro />
     </div>
