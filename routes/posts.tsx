@@ -7,7 +7,7 @@ export default function Page(props: PageProps) {
   const flexCol = tw`flex flex-col justify-center items-center`;
 
   return (
-    <div class={tw`p-8 flex justify-center items-center overflow-y-scroll`}>
+    <div class={tw`p-8 flex justify-center items-center`}>
       <Navbar path={props.route} />
     </div>
   );

@@ -6,8 +6,7 @@ import Navbar from "../components/Navbar.tsx";
 export default function Page(props: PageProps) {
   return (
     <div
-      class={tw
-        `p-8 flex flex-col justify-center items-center overflow-y-scroll`}
+      class={tw`p-8 flex flex-col justify-center items-center`}
     >
       <Navbar path={props.route} />
       <Intro />

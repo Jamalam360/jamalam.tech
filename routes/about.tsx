@@ -10,7 +10,7 @@ export default function Page(props: PageProps) {
 
   return (
     <div
-      class={tw`${flexCol} p-8 overflow-y-scroll`}
+      class={tw`${flexCol} p-8`}
     >
       <Navbar path={props.route} />
       <div

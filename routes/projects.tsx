@@ -4,17 +4,18 @@ import { emphasised_text, h, PageProps, tw } from "../client_deps.ts";
 import Navbar from "../components/Navbar.tsx";
 
 const title = `${emphasised_text} text-3xl font-semibold py-2`;
-const summary = `select-none hover:font-bold duration-75`;
+const summary = `text-center select-none hover:font-bold duration-75`;
 const paragraph = `p-4`;
 const image = `w-64 rounded-xl`;
-const detailsWrapper = `flex flex-col items-center`;
+const detailsWrapper =
+  `flex flex-col items-center justify-start items-start text-left`;
 
 export default function Page(props: PageProps) {
   const flexCol = tw`flex flex-col justify-center items-center`;
 
   return (
     <div
-      class={tw`${flexCol} p-8 overflow-y-scroll`}
+      class={tw`${flexCol} p-8`}
     >
       <Navbar path={props.route} />
       <div
@@ -43,7 +44,7 @@ function Discord() {
   return (
     <div>
       <p class={tw`${title}`}>Discord</p>
-      <div class={tw`flex flex-col justify-start items-start`}>
+      <div class={tw`flex flex-col items-center`}>
         <details>
           <summary class={tw`${summary}`}>
             Pinguino
