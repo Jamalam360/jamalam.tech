@@ -1,5 +1,7 @@
 /** @jsx h */
-import { emphasised_text, h, tw } from "../client_deps.ts";
+import { h, tw } from "../client_deps.ts";
+
+import Link from "./text/Link.tsx";
 
 const pages = [
   {
@@ -35,7 +37,7 @@ export default function Navbar({ path }: { path: string }) {
         <a
           class={tw`text(xl) px-4 font-semibold hover:font-bold duration-75 ${
             page.path == path
-              ? tw`${emphasised_text} underline underline-offset-8`
+              ? tw`text-cyan-600 underline underline-offset-8`
               : ``
           }`}
           href={page.path}

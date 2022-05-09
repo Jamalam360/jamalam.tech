@@ -32,7 +32,3 @@ export const theme = {
 if (IS_BROWSER) {
   setup(theme);
 }
-
-// Some common styles
-
-export const emphasised_text = `text-cyan-600`;
