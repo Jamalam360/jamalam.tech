@@ -5,6 +5,13 @@ export * from "twind";
 export const config: Configuration = {
   darkMode: "class",
   mode: "silent",
+  theme: {
+    extend: {
+      fontFamily: {
+        roboto: ["Roboto Slab", "serif"],
+      },
+    },
+  },
 };
 
 if (IS_BROWSER) setup(config);
