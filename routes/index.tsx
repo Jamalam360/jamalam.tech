@@ -42,7 +42,7 @@ export default function Home() {
           class={tw`flex flex-col`}
         >
           <p class={tw`text-xl font-light`}>Notable Projects</p>
-          <div class={tw`md:flex md:flex-row md:flex-wrap`}>
+          <div class={tw`flex flex-col md:flex-row md:flex-wrap`}>
             <Project
               name="Test"
               type="Web Development"
