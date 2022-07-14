@@ -130,7 +130,7 @@ function Project(props: ProjectProps) {
     <div
       class={tw`flex flex-col w-full md:w-1/4 p-2 md:p-6`}
     >
-      <div class={tw`p-2 md:p-4 rounded border-solid border-2 border-gray-300`}>
+      <div class={tw`p-4 rounded border-solid border-2 border-gray-300`}>
         <a href={props.image} target="_blank">
           <img
             class={tw`rounded-lg`}
