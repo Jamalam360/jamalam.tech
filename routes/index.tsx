@@ -128,9 +128,9 @@ interface ProjectProps {
 function Project(props: ProjectProps) {
   return (
     <div
-      class={tw`flex flex-col w-10/12 md:w-1/4 p-6`}
+      class={tw`flex flex-col w-full md:w-1/4 p-6`}
     >
-      <div class={tw`p-4 rounded border-solid border-2 border-gray-300`}>
+      <div class={tw`p-2 md:p-4 rounded border-solid border-2 border-gray-300`}>
         <img class={tw`rounded-lg`} src={props.image} alt={props.description} />
 
         <div class={tw`flex flex-row pt-4`}>
