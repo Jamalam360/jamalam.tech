@@ -131,7 +131,13 @@ function Project(props: ProjectProps) {
       class={tw`flex flex-col w-full md:w-1/4 p-6`}
     >
       <div class={tw`p-2 md:p-4 rounded border-solid border-2 border-gray-300`}>
-        <img class={tw`rounded-lg`} src={props.image} alt={props.description} />
+        <a href={props.image} target="_blank">
+          <img
+            class={tw`rounded-lg`}
+            src={props.image}
+            alt={props.description}
+          />
+        </a>
 
         <div class={tw`flex flex-row pt-4`}>
           <p class={tw`font-light`}>{props.name}</p>
