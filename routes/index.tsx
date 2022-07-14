@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div
       class={tw
-        `h-screen bg-gray-200 flex flex-col p-6 md:px-12 md:py-6 font-roboto`}
+        `h-full min-h-screen bg-gray-200 flex flex-col p-6 md:px-12 md:py-6 font-roboto`}
     >
       <div
         class={tw`flex flex-col md:flex-row md:items-center`}
@@ -37,12 +37,12 @@ export default function Home() {
         </p>
       </div>
 
-      <div class={tw`flex pt-16`}>
+      <div class={tw`flex flex-col md:flex-row pt-16`}>
         <div
           class={tw`flex flex-col`}
         >
           <p class={tw`text-xl font-light`}>Notable Projects</p>
-          <div class={tw`flex flex-col md:flex-row md:flex-wrap`}>
+          <div class={tw`flex flex-col items-center md:flex-row md:flex-wrap`}>
             <Project
               name="Test"
               type="Web Development"
@@ -109,8 +109,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div class={tw`absolute bottom-0 pb-4 flex justify-center`}>
-        <p class={tw`text-base font-extralight`}>Copyright © 2020 Jamalam.</p>
+      <div class={tw`pb-4 pt-6 flex justify-center`}>
+        <p class={tw`text-base font-extralight`}>
+          Copyright © {new Date().getFullYear()} Jamalam.
+        </p>
       </div>
     </div>
   );
