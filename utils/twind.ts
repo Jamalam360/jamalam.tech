@@ -1,14 +1,16 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { Configuration, setup } from "twind";
+import { orange } from "twind/colors";
 export * from "twind";
 
 export const config: Configuration = {
-  darkMode: "class",
-  mode: "silent",
   theme: {
     extend: {
       fontFamily: {
         roboto: ["Roboto Slab", "serif"],
+      },
+      colors: {
+        orange: orange,
       },
     },
   },

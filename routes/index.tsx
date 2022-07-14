@@ -24,11 +24,14 @@ const links: { url: string; text: string }[] = [
 
 export default function Home() {
   return (
-    <div class={tw`flex flex-col p-6 md:px-12 md:py-6 font-roboto`}>
+    <div
+      class={tw
+        `h-screen bg-gray-200 flex flex-col p-6 md:px-12 md:py-6 font-roboto`}
+    >
       <div
         class={tw`flex flex-col md:flex-row md:items-center`}
       >
-        <p class={tw`text-2xl`}>Jamalam</p>
+        <p class={tw`text(2xl orange-500)`}>Jamalam</p>
         <p class={tw`text-xl font-light pt-6 md:pl-24 md:pt-0`}>
           Developer of all manner of things.
         </p>
@@ -94,7 +97,7 @@ export default function Home() {
             <div class={tw`flex flex-col`}>
               {links.map((link) => (
                 <a
-                  class={tw`text-lg font-light`}
+                  class={tw`text(lg orange-500) font-light`}
                   href={link.url}
                   target="_blank"
                 >
@@ -104,6 +107,10 @@ export default function Home() {
             </div>
           </SidebarSection>
         </div>
+      </div>
+
+      <div class={tw`absolute bottom-0 pb-4 flex justify-center`}>
+        <p class={tw`text-base font-extralight`}>Copyright © 2020 Jamalam.</p>
       </div>
     </div>
   );
@@ -121,7 +128,7 @@ function Project(props: ProjectProps) {
     <div
       class={tw`flex flex-col w-10/12 md:w-1/4 p-6`}
     >
-      <div class={tw`p-4 rounded border-solid border-2 border-slate-300`}>
+      <div class={tw`p-4 rounded border-solid border-2 border-gray-300`}>
         <img class={tw`rounded-lg`} src={props.image} alt={props.description} />
 
         <div class={tw`flex flex-row pt-4`}>
