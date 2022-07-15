@@ -186,7 +186,8 @@ function Project(props: ProjectProps) {
           <a href={props.image} target="_blank">
             <img
               loading="lazy"
-              class={tw`rounded-lg h-96 object-cover`}
+              class={tw
+                `rounded-lg h-96 object-cover aspect-square md:aspect-auto`}
               src={props.image}
               alt={props.description}
             />
