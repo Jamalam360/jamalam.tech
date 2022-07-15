@@ -187,7 +187,7 @@ function Project(props: ProjectProps) {
             <img
               loading="lazy"
               class={tw
-                `rounded-lg h-96 object-cover aspect-square md:aspect-auto`}
+                `rounded-lg h-96 object-scale-down md:object-cover aspect-square md:aspect-auto`}
               src={props.image}
               alt={props.description}
             />
