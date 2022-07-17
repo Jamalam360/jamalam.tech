@@ -6,6 +6,8 @@ import { tw } from "@twind";
 enum ProjectType {
   Web = "Web Development",
   Minecraft = "Minecraft Mod",
+  Commission = "Commissioned Mod",
+  Discord = "Discord Bot",
 }
 
 const links: { url: string; text: string }[] = [
@@ -102,6 +104,53 @@ const projects: ProjectProps[] = shuffle([
       "https://github.com/samedifferent/TrickOrTreat/blob/fabric/src/main/resources/assets/trickortreat/icon.png?raw=true",
     description: "A mod which I ported to Fabric for MMD SpookyJam 2021.",
   },
+  {
+    name: "Doogle",
+    type: ProjectType.Web,
+    link: "https://dog.jamalam.tech",
+    image:
+      "https://github.com/dog-jamalam-tech/frontend/blob/main/static/doogle.png?raw=true",
+    description:
+      "A website that shows you photos of dogs! Made for a competition.",
+  },
+  {
+    name: "Pinguino",
+    type: ProjectType.Discord,
+    link: "https://pinguino.jamalam.tech",
+    image:
+      "https://github.com/Jamalam360/assets/blob/main/Pinguino/pinguino-medium.jpg?raw=true",
+    description:
+      "A multi-purpose Discord bot, currently being completely rewritten.",
+  },
+  {
+    name: "'Grow Mobs'",
+    type: ProjectType.Commission,
+    link: "https://www.youtube.com/watch?v=ZIt_7kOxYe0",
+    image: "https://img.youtube.com/vi/ZIt_7kOxYe0/maxresdefault.jpg",
+    description: "A mod where you can grow mobs from seeds, for Jagster.",
+  },
+  {
+    name: "LPA3227 Gear",
+    type: ProjectType.Commission,
+    link: "",
+    image: "https://i.imgur.com/XWeAgmW.png",
+    description: "A mod for for the LPA3227 SMP that adds in extra weapons.",
+  },
+  {
+    name: "'Sock's Storms'",
+    type: ProjectType.Commission,
+    link: "",
+    image: "https://i.imgur.com/sxUOKvA.gif",
+    description:
+      "A mod where random, crazy storms happen every few minutes, for SocksFor1.",
+  },
+  {
+    name: "'Sock's Enchantments'",
+    type: ProjectType.Commission,
+    link: "",
+    image: "https://i.imgur.com/sgXrRKn.gif",
+    description: "A mod that adds in lots of enchantments, for SocksFor1.",
+  },
 ]);
 
 function shuffle(a: any[]) {
@@ -131,7 +180,7 @@ export default function Home() {
         <div
           class={tw`flex flex-col`}
         >
-          <p class={tw`text-xl font-light`}>Notable Projects</p>
+          <p class={tw`text-xl font-light pb-2`}>Notable Projects</p>
           <div class={tw`flex flex-col items-stretch md:flex-row md:flex-wrap`}>
             {projects.map((project) => <Project {...project} />)}
           </div>
@@ -139,9 +188,45 @@ export default function Home() {
         <div class={tw`flex-grow`} />
         <div class={tw`flex flex-col md:w-2/3`}>
           <SidebarSection title="About">
-            <p class={tw`text-lg font-light`}>I am the best.</p>
+            <p class={tw`text-lg font-light`}>
+              Hey! I'm Jamalam, or James, a developer from the UK. I primarily
+              work on Minecraft, but I'm also interested in web development,
+              amongst other things. I am open to any opportunities for custom
+              mod commissions, so feel free to reach out to me via Discord
+              (linked below) to discuss your needs.
+            </p>
           </SidebarSection>
           <SidebarSection title="Skills">
+            <ul class={tw`md:pl-2 list-disc`}>
+              <li>
+                <p class={tw`text-lg font-light`}>Fabric & Quilt Modding</p>
+              </li>
+              <li>
+                <p class={tw`text-lg font-light`}>
+                  Multiplatform Modding (Architectury)
+                </p>
+              </li>
+              <li>
+                <p class={tw`text-lg font-light`}>Web Development (fresh)</p>
+              </li>
+              <li>
+                <p class={tw`text-lg font-light`}>TailwindCSS</p>
+              </li>
+              <li>
+                <p class={tw`text-lg font-light`}>
+                  Discord Bot Development (Kord Extensions)
+                </p>
+              </li>
+              <li>
+                <p class={tw`text-lg font-light`}>TypeScript</p>
+              </li>
+              <li>
+                <p class={tw`text-lg font-light`}>Kotlin</p>
+              </li>
+              <li>
+                <p class={tw`text-lg font-light`}>Java</p>
+              </li>
+            </ul>
           </SidebarSection>
           <SidebarSection title="Links">
             <div class={tw`flex flex-col`}>
@@ -179,7 +264,7 @@ interface ProjectProps {
 function Project(props: ProjectProps) {
   return (
     <div
-      class={tw`flex flex-col w-full md:w-1/3 p-2 md:p-6`}
+      class={tw`flex flex-col w-full md:w-1/3 pr-2 pl-0 py-2 md:pr-4`}
     >
       <div class={tw`h-full p-4 rounded border-solid border-2 border-gray-300`}>
         <div class={tw`flex justify-center`}>
@@ -195,8 +280,10 @@ function Project(props: ProjectProps) {
 
         <div class={tw`flex flex-row pt-4`}>
           <a
-            class={tw`font-light text-orange-500`}
-            href={props.link}
+            class={tw`font-light ${
+              !(props.link == "") ? "text-orange-500" : ""
+            }`}
+            href={props.link == "" ? undefined : props.link}
             target="_blank"
           >
             {props.name}
