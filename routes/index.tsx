@@ -35,6 +35,10 @@ const links: { url: string; text: string }[] = [
     url: "https://modrinth.com/user/jamalam",
     text: "Modrinth",
   },
+  {
+    url: "https://maven.jamalam.tech",
+    text: "Maven",
+  },
 ];
 
 const projects: ProjectProps[] = shuffle([
@@ -201,7 +205,9 @@ export default function Home() {
               work on Minecraft, but I'm also interested in web development,
               amongst other things. I am open to any opportunities for custom
               mod commissions, so feel free to reach out to me via Discord
-              (linked below) to discuss your needs.
+              (linked below) to discuss your needs - please note that I cannot
+              provide assets/art myself, although I do have contacts who I am
+              able to source assets from for commissions.
             </p>
           </SidebarSection>
           <SidebarSection title="Skills">
