@@ -46,6 +46,14 @@ const projects: ProjectProps[] = shuffle([
     description: "A mod that adds in jam, which can be made of any food item.",
   },
   {
+    name: "JamLib",
+    type: ProjectType.Minecraft,
+    link: "https://www.curseforge.com/minecraft/mc-mods/jamlib",
+    image:
+      "https://github.com/JamCoreModding/JamLib/blob/main/src/main/resources/assets/jamlib/icon.png?raw=true",
+    description: "A library used by all of my mods.",
+  },
+  {
     name: "Notify",
     type: ProjectType.Minecraft,
     link: "https://www.curseforge.com/minecraft/mc-mods/notify",
