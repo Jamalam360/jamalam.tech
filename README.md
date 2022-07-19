@@ -1,4 +1,6 @@
-# fresh project
+# jamalam.tech
+
+My portfolio website, built with Deno and fresh, hosted on Deno Deploy, and available at [jamalam.tech](https://jamalam.tech/).
 
 ### Usage
 
