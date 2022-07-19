@@ -17,6 +17,11 @@ export default function App({ Component }: AppProps) {
           href="/global.css"
           rel="stylesheet"
         />
+        <meta charSet="utf-8" />
+        <meta name="description" content="Jamalam's Portfolio" />
+        <meta name="author" content="Jamalam" />
+        <title>Jamalam's Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <Component />
     </div>
