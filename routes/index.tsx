@@ -166,7 +166,8 @@ const projects: ProjectProps[] = shuffle([
   {
     name: "PBOSB",
     type: ProjectType.Commission,
-    link: "https://i.imgur.com/gAaMLl3.mp4",
+    link: ""
+    image: "https://i.imgur.com/gAaMLl3.mp4",
     description: "A mod that makes projectiles bounce off of slime blocks."
   }
 ]);
@@ -308,7 +309,7 @@ function Project(props: ProjectProps) {
             {props.name}
           </a>
           <div class={tw`flex-grow`} />
-          <p class={tw`font-light`}>{props.type}</p>
+          <p class={tw`font-light pl-2 md:pl-0`}>{props.type}</p>
         </div>
 
         <p class={tw`pt-4 font-light`}>{props.description}</p>
