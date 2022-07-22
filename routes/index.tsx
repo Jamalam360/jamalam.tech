@@ -163,6 +163,12 @@ const projects: ProjectProps[] = shuffle([
     image: "https://i.imgur.com/sgXrRKn.gif",
     description: "A mod that adds in lots of enchantments, for SocksFor1.",
   },
+  {
+    name: "PBOSB",
+    type: ProjectType.Commission,
+    link: "https://i.imgur.com/gAaMLl3.mp4",
+    description: "A mod that makes projectiles bounce off of slime blocks."
+  }
 ]);
 
 function shuffle(a: any[]) {
@@ -294,9 +300,8 @@ function Project(props: ProjectProps) {
 
         <div class={tw`flex flex-row pt-4`}>
           <a
-            class={tw`font-light ${
-              !(props.link == "") ? "text-orange-500" : ""
-            }`}
+            class={tw`font-light ${!(props.link == "") ? "text-orange-500" : ""
+              }`}
             href={props.link == "" ? undefined : props.link}
             target="_blank"
           >
