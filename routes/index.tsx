@@ -166,7 +166,7 @@ const projects: ProjectProps[] = shuffle([
   {
     name: "PBOSB",
     type: ProjectType.Commission,
-    link: ""
+    link: "",
     image: "https://i.imgur.com/gAaMLl3.mp4",
     description: "A mod that makes projectiles bounce off of slime blocks."
   }
