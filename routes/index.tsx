@@ -96,7 +96,7 @@ const projects: ProjectProps[] = shuffle([
     type: ProjectType.Minecraft,
     link: "https://www.curseforge.com/minecraft/mc-mods/rightclickharvest",
     image:
-      "https://github.com/JamCoreModding/RightClickHarvest/blob/1.18-1.19/demo.gif?raw=true",
+      "https://github.com/JamCoreModding/RightClickHarvest/blob/1.19.x/demo.gif?raw=true",
     description: "A mod that allows you to harvest crops with right-click.",
   },
   {
@@ -115,6 +115,14 @@ const projects: ProjectProps[] = shuffle([
     image:
       "https://github.com/samedifferent/TrickOrTreat/blob/fabric/src/main/resources/assets/trickortreat/icon.png?raw=true",
     description: "A mod which I ported to Fabric for MMD SpookyJam 2021.",
+  },
+  {
+    name: "Utility Belt",
+    type: ProjectType.Minecraft,
+    link: "https://www.curseforge.com/minecraft/mc-mods/utility-belt",
+    image:
+      "https://github.com/JamCoreModding/UtilityBelt/blob/1.19.x/readme-assets/demo_one.gif?raw=true",
+    description: "A mod that adds in a second hotbar for tools.",
   },
   {
     name: "Doogle",
@@ -168,8 +176,8 @@ const projects: ProjectProps[] = shuffle([
     type: ProjectType.Commission,
     link: "",
     image: "https://i.imgur.com/gAaMLl3.gif",
-    description: "A mod that makes projectiles bounce off of slime blocks."
-  }
+    description: "A mod that makes projectiles bounce off of slime blocks.",
+  },
 ]);
 
 function shuffle(a: any[]) {
@@ -301,8 +309,9 @@ function Project(props: ProjectProps) {
 
         <div class={tw`flex flex-row pt-4`}>
           <a
-            class={tw`font-light ${!(props.link == "") ? "text-orange-500" : ""
-              }`}
+            class={tw`font-light ${
+              !(props.link == "") ? "text-orange-500" : ""
+            }`}
             href={props.link == "" ? undefined : props.link}
             target="_blank"
           >
