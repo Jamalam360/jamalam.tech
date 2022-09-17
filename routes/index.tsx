@@ -195,8 +195,8 @@ export default function Home() {
       <div
         class={tw`flex flex-col text-center md:flex-row md:items-center`}
       >
-        <p class={tw`text(3xl orange-500) md:text-5xl`}>Jamalam</p>
-        <p class={tw`text-2xl md:text-3xl font-light pt-6 md:pl-24 md:pt-0`}>
+        <p class={tw`text(2xl orange-500) md:text-3xl`}>Jamalam</p>
+        <p class={tw`text-xl md:text-2xl font-light pt-6 md:pl-24 md:pt-0`}>
           Developer of all manner of things.
         </p>
       </div>
@@ -210,7 +210,7 @@ export default function Home() {
         <div class={tw`flex-grow`} />
         <div class={tw`flex flex-col md:w-1/3`}>
           <SidebarSection title="About">
-            <p class={tw`text-lg md:text-2xl font-light`}>
+            <p class={tw`text-lg md:text-xl font-light`}>
               Hey! I'm Jamalam, or James, a developer from the UK. I primarily
               work on Minecraft, but I'm also interested in web development,
               amongst other things. I am open to any opportunities for custom
@@ -221,7 +221,7 @@ export default function Home() {
             </p>
           </SidebarSection>
           <SidebarSection title="Skills">
-            <ul class={tw`md:pl-8 text-lg md:text-2xl list-disc`}>
+            <ul class={tw`md:pl-8 text-lg md:text-xl list-disc`}>
               <li>
                 <p class={tw`font-light`}>
                   Fabric & Quilt Modding
@@ -260,7 +260,7 @@ export default function Home() {
             <div class={tw`flex flex-col`}>
               {links.map((link) => (
                 <a
-                  class={tw`text(lg orange-500) md:text-2xl font-light`}
+                  class={tw`text(lg orange-500) md:text-xl font-light`}
                   href={link.url}
                   target="_blank"
                 >
@@ -292,13 +292,13 @@ interface ProjectProps {
 function Project(props: ProjectProps) {
   return (
     <div
-      class={tw`flex flex-col w-full md:w-1/3 py-2 md:pr-4`}
+      class={tw`flex flex-col w-full md:w-1/2 py-2 md:pr-4`}
     >
       <div
-        class={tw`h-full p-4 rounded border-solid border-2 border-gray-400 md:text-2xl`}
+        class={tw`h-full p-4 rounded border-solid border-2 border-gray-400 md:text-xl`}
       >
         <a
-          class={tw`font-light h-8 md:text-3xl ${
+          class={tw`font-light h-8 md:text-2xl ${
             !(props.link == "") ? "text-orange-500" : ""
           }`}
           href={props.link == "" ? undefined : props.link}
@@ -336,7 +336,7 @@ function SidebarSection(props: SidebarSectionProps) {
   return (
     <details>
       <summary
-        class={tw`text-xl md:text-3xl font-light cursor-pointer select-none`}
+        class={tw`text-xl font-light cursor-pointer select-none`}
       >
         {" " + props.title}
       </summary>
