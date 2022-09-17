@@ -297,15 +297,19 @@ function Project(props: ProjectProps) {
       <div
         class={tw`h-full p-4 rounded border-solid border-2 border-gray-400 md:text-xl`}
       >
-        <a
-          class={tw`font-light h-8 md:text-2xl ${
-            !(props.link == "") ? "text-orange-500" : ""
-          }`}
-          href={props.link == "" ? undefined : props.link}
-          target="_blank"
-        >
-          {props.name}
-        </a>
+        {props.link != ""
+          ? (
+            <a
+              class={tw`font-light h-8 md:text-2xl ${
+                !(props.link == "") ? "text-orange-500" : ""
+              }`}
+              href={props.link}
+              target="_blank"
+            >
+              {props.name}
+            </a>
+          )
+          : <p class={tw`font-light h-8 md:text-2xl`}>{props.name}</p>}
         <div class={tw`flex justify-center pt-4`}>
           {props.image.endsWith(".mp4")
             ? (
