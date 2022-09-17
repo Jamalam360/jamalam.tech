@@ -145,7 +145,7 @@ const projects: ProjectProps[] = shuffle([
     name: "'Grow Mobs'",
     type: ProjectType.Commission,
     link: "https://www.youtube.com/watch?v=ZIt_7kOxYe0",
-    image: "https://img.youtube.com/vi/ZIt_7kOxYe0/maxresdefault.jpg",
+    image: "/showcase/growmobs.jpg",
     description: "A mod where you can grow mobs from seeds, for Jagster.",
   },
   {
