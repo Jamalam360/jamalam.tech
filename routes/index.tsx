@@ -46,7 +46,7 @@ const projects: ProjectProps[] = shuffle([
     name: "Jamtastic",
     type: ProjectType.Minecraft,
     link: "https://www.curseforge.com/minecraft/mc-mods/jamtastic",
-    image: "https://github.com/JamCoreModding/Jamtastic/raw/main/demo.gif",
+    image: "/showcase/jamtastic.mp4",
     description: "A mod that adds in jam, which can be made of any food item.",
   },
   {
@@ -87,7 +87,7 @@ const projects: ProjectProps[] = shuffle([
     name: "Reaping",
     type: ProjectType.Minecraft,
     link: "https://www.curseforge.com/minecraft/mc-mods/reaping",
-    image: "https://github.com/JamCoreModding/Reaping/raw/1.19/demo.gif",
+    image: "/showcase/reaping.mp4",
     description:
       "A mod that allows you to harvest animals in a cursed manner...",
   },
@@ -119,8 +119,7 @@ const projects: ProjectProps[] = shuffle([
     name: "Utility Belt",
     type: ProjectType.Minecraft,
     link: "https://www.curseforge.com/minecraft/mc-mods/utility-belt",
-    image:
-      "https://github.com/JamCoreModding/UtilityBelt/blob/1.19.x/readme-assets/demo_one.gif?raw=true",
+    image: "/showcase/utilitybelt.mp4",
     description: "A mod that adds in a second hotbar for tools.",
   },
   {
@@ -167,7 +166,7 @@ const projects: ProjectProps[] = shuffle([
     name: "'Sock's Enchantments'",
     type: ProjectType.Commission,
     link: "",
-    image: "https://i.imgur.com/sgXrRKn.gif",
+    image: "/showcase/enchantments.mp4",
     description: "A mod that adds in lots of enchantments, for SocksFor1.",
   },
   {
