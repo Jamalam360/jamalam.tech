@@ -201,7 +201,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div class={tw`flex flex-col md:flex-row pt-16 md:pt-6`}>
+      <div class={tw`flex flex-col md:flex-row pt-8 md:pt-6`}>
         <div
           class={tw`flex flex-col items-stretch md:w-3/4 md:flex-row md:flex-wrap`}
         >
@@ -210,7 +210,7 @@ export default function Home() {
         <div class={tw`flex-grow`} />
         <div class={tw`flex flex-col md:w-1/3`}>
           <SidebarSection title="About">
-            <p class={tw`md:text-lg md:text-2xl font-light`}>
+            <p class={tw`text-lg md:text-2xl font-light`}>
               Hey! I'm Jamalam, or James, a developer from the UK. I primarily
               work on Minecraft, but I'm also interested in web development,
               amongst other things. I am open to any opportunities for custom
@@ -292,7 +292,7 @@ interface ProjectProps {
 function Project(props: ProjectProps) {
   return (
     <div
-      class={tw`flex flex-col w-full md:w-1/3 pr-2 pl-0 py-2 md:pr-4`}
+      class={tw`flex flex-col w-full md:w-1/3 py-2 md:pr-4`}
     >
       <div
         class={tw`h-full p-4 rounded border-solid border-2 border-gray-400 md:text-2xl`}
@@ -306,7 +306,7 @@ function Project(props: ProjectProps) {
         >
           {props.name}
         </a>
-        <div class={tw`flex justify-center md:pt-4`}>
+        <div class={tw`flex justify-center pt-4`}>
           <a href={props.image} target="_blank">
             <img
               loading="lazy"
