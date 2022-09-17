@@ -307,14 +307,23 @@ function Project(props: ProjectProps) {
           {props.name}
         </a>
         <div class={tw`flex justify-center pt-4`}>
-          <a href={props.image} target="_blank">
-            <img
-              loading="lazy"
-              class={tw`rounded-lg md:h-96 object-scale-down md:object-cover`}
-              src={props.image}
-              alt={props.description}
-            />
-          </a>
+          {props.image.endsWith(".mp4")
+            ? (
+              <video controls autoPlay loop class={tw`md:h-96 rounded-lg`}>
+                <source src={props.image} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )
+            : (
+              <a href={props.image} target="_blank">
+                <img
+                  loading="lazy"
+                  class={tw`rounded-lg md:h-96 object-scale-down md:object-cover`}
+                  src={props.image}
+                  alt={props.description}
+                />
+              </a>
+            )}
         </div>
 
         <div class={tw`flex flex-row pt-4`}>
