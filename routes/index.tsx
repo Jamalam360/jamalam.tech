@@ -259,7 +259,7 @@ export default function Home() {
             <div class={tw`flex flex-col`}>
               {links.map((link) => (
                 <a
-                  class={tw`text(lg orange-500) md:text-xl font-light`}
+                  class={tw`text(lg orange-700) md:text-xl font-light`}
                   href={link.url}
                   target="_blank"
                 >
@@ -300,7 +300,7 @@ function Project(props: ProjectProps) {
           ? (
             <a
               class={tw`font-light h-8 md:text-2xl ${
-                !(props.link == "") ? "text-orange-500" : ""
+                !(props.link == "") ? "text-orange-700" : ""
               }`}
               href={props.link}
               target="_blank"
