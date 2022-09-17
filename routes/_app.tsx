@@ -19,22 +19,37 @@ export default function App({ Component }: AppProps) {
         />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-        <title>Jamalam's Portfolio</title>
         <meta charSet="utf-8" />
 
-        <meta name="description" content="Jamalam's Portfolio" />
-        <meta name="author" content="Jamalam" />
+        <title>Jamalam's Portfolio</title>
+        <meta name="title" content="Jamalam's Portfolio" />
+        <meta
+          name="description"
+          content="Jamalam's personal developer portfolio - Minecraft, Web, & Discord."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://metatags.io/" />
         <meta property="og:title" content="Jamalam's Portfolio" />
-        <meta property="og:site_name" content="Jamalam's Portfolio" />
-        <meta property="og:url" content="https://jamalam.tech" />
         <meta
           property="og:description"
-          content="Jamalam's personal developer portfolio."
+          content="Jamalam's personal developer portfolio - Minecraft, Web, & Discord."
         />
-        <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://og-image.xyz/og/Jamalam's Portfolio/Jamalam's personal {{n}}developer portfolio./jamalam.tech/https/menlo/shatteredfeelings/{{h}}000000/data.png"
+          content="/og.png"
+        />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta property="twitter:title" content="Jamalam's Portfolio" />
+        <meta
+          property="twitter:description"
+          content="Jamalam's personal developer portfolio - Minecraft, Web, & Discord."
+        />
+        <meta
+          property="twitter:image"
+          content="/og.png"
         />
       </Head>
       <Component />
