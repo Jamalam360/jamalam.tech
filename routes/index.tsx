@@ -141,6 +141,15 @@ const projects: ProjectProps[] = shuffle([
       "A multi-purpose Discord bot, currently being completely rewritten.",
   },
   {
+    name: "NoArchive",
+    type: ProjectType.Discord,
+    link: "https://github.com/JamCoreDiscord/NoArchive",
+    image:
+      "https://github.com/Jamalam360/assets/blob/main/jamcore.png?raw=true",
+    description:
+      "A Discord bot which can keep threads from archiving when desired.",
+  },
+  {
     name: "'Grow Mobs'",
     type: ProjectType.Commission,
     link: "https://www.youtube.com/watch?v=ZIt_7kOxYe0",
