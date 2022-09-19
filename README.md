@@ -2,7 +2,8 @@
 
 [![Made with Fresh](https://fresh.deno.dev/fresh-badge-dark.svg)](https://fresh.deno.dev)
 
-My portfolio website, built with Deno and fresh, hosted on Deno Deploy, and available at [jamalam.tech](https://jamalam.tech/).
+My portfolio website, built with Deno and fresh, hosted on Deno Deploy, and
+available at [jamalam.tech](https://jamalam.tech/).
 
 ## Usage
 
