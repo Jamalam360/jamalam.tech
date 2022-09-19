@@ -1,7 +1,4 @@
 // deno-lint-ignore-file no-explicit-any
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
 
 enum ProjectType {
   Web = "Web Development",
@@ -198,27 +195,24 @@ function shuffle(a: any[]) {
 export default function Home() {
   return (
     <div
-      class={tw`h-full min-h-screen bg-gray-200 flex flex-col p-6 md:px-12 md:py-6 font-roboto`}
+      id="main"
+      class="h-full min-h-screen bg-gray-200 flex flex-col p-6 md:px-12 md:py-6"
     >
-      <div
-        class={tw`flex flex-col text-center md:flex-row md:items-center`}
-      >
-        <p class={tw`text(2xl orange-500) md:text-3xl`}>Jamalam</p>
-        <p class={tw`text-xl md:text-2xl font-light pt-6 md:pl-24 md:pt-0`}>
+      <div class="flex flex-col text-center md:flex-row md:items-center">
+        <p class="text(2xl orange-500) md:text-3xl">Jamalam</p>
+        <p class="text-xl md:text-2xl font-light pt-6 md:pl-24 md:pt-0">
           Developer of all manner of things.
         </p>
       </div>
 
-      <div class={tw`flex flex-col md:flex-row pt-8 md:pt-6`}>
-        <div
-          class={tw`flex flex-col items-stretch md:w-3/4 md:flex-row md:flex-wrap`}
-        >
+      <div class="flex flex-col md:flex-row pt-8 md:pt-6">
+        <div class="flex flex-col items-stretch md:w-3/4 md:flex-row md:flex-wrap">
           {projects.map((project) => <Project {...project} />)}
         </div>
-        <div class={tw`flex-grow`} />
-        <div class={tw`flex flex-col md:w-1/3`}>
+        <div class="flex-grow" />
+        <div class="flex flex-col md:w-1/3">
           <SidebarSection title="About">
-            <p class={tw`text-lg md:text-xl font-light`}>
+            <p class="text-lg md:text-xl font-light">
               Hey! I'm Jamalam, or James, a developer from the UK. I primarily
               work on Minecraft, but I'm also interested in web development,
               amongst other things. I am open to any opportunities for custom
@@ -229,46 +223,46 @@ export default function Home() {
             </p>
           </SidebarSection>
           <SidebarSection title="Skills">
-            <ul class={tw`md:pl-8 text-lg md:text-xl list-disc`}>
+            <ul class="md:pl-8 text-lg md:text-xl list-disc">
               <li>
-                <p class={tw`font-light`}>
+                <p class="font-light">
                   Fabric & Quilt Modding
                 </p>
               </li>
               <li>
-                <p class={tw`font-light`}>
+                <p class="font-light">
                   Multiplatform Modding (Architectury)
                 </p>
               </li>
               <li>
-                <p class={tw`font-light`}>
+                <p class="font-light">
                   Web Development (fresh)
                 </p>
               </li>
               <li>
-                <p class={tw`font-light`}>TailwindCSS</p>
+                <p class="font-light">TailwindCSS</p>
               </li>
               <li>
-                <p class={tw`font-light`}>
+                <p class="font-light">
                   Discord Bot Development (Kord Extensions)
                 </p>
               </li>
               <li>
-                <p class={tw`font-light`}>TypeScript</p>
+                <p class="font-light">TypeScript</p>
               </li>
               <li>
-                <p class={tw`font-light`}>Kotlin</p>
+                <p class="font-light">Kotlin</p>
               </li>
               <li>
-                <p class={tw`font-light`}>Java</p>
+                <p class="font-light">Java</p>
               </li>
             </ul>
           </SidebarSection>
           <SidebarSection title="Links">
-            <div class={tw`flex flex-col`}>
+            <div class="flex flex-col">
               {links.map((link) => (
                 <a
-                  class={tw`text(lg orange-700) md:text-xl font-light`}
+                  class="text(lg orange-500) md:text-xl font-light"
                   href={link.url}
                   target="_blank"
                 >
@@ -280,8 +274,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div class={tw`pb-4 pt-6 flex justify-center`}>
-        <p class={tw`text-base md:text-2xl font-extralight`}>
+      <div class="pb-4 pt-6 flex justify-center">
+        <p class="text-base md:text-2xl font-extralight">
           Copyright © {new Date().getFullYear()} Jamalam.
         </p>
       </div>
@@ -299,17 +293,13 @@ interface ProjectProps {
 
 function Project(props: ProjectProps) {
   return (
-    <div
-      class={tw`flex flex-col w-full md:w-1/2 py-2 md:pr-4`}
-    >
-      <div
-        class={tw`h-full p-4 rounded border-solid border-2 border-gray-400 md:text-xl`}
-      >
+    <div class="flex flex-col w-full md:w-1/2 py-2 md:pr-4">
+      <div class="h-full p-4 rounded border-solid border-2 border-gray-400 md:text-xl">
         {props.link != ""
           ? (
             <a
-              class={tw`font-light h-8 md:text-2xl ${
-                !(props.link == "") ? "text-orange-700" : ""
+              class={`font-light h-8 md:text-2xl ${
+                !(props.link == "") ? "text-orange-500" : ""
               }`}
               href={props.link}
               target="_blank"
@@ -317,11 +307,11 @@ function Project(props: ProjectProps) {
               {props.name}
             </a>
           )
-          : <p class={tw`font-light h-8 md:text-2xl`}>{props.name}</p>}
-        <div class={tw`flex justify-center pt-4`}>
+          : <p class="font-light h-8 md:text-2xl">{props.name}</p>}
+        <div class="flex justify-center pt-4">
           {props.image.endsWith(".mp4")
             ? (
-              <video controls autoPlay loop class={tw`md:h-96 rounded-lg`}>
+              <video controls autoPlay loop class="md:h-96 rounded-lg">
                 <source src={props.image} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -330,7 +320,7 @@ function Project(props: ProjectProps) {
               <a href={props.image} target="_blank">
                 <img
                   loading="lazy"
-                  class={tw`rounded-lg md:h-96 object-scale-down md:object-cover`}
+                  class="rounded-lg md:h-96 object-scale-down md:object-cover"
                   src={props.image}
                   alt={props.description}
                 />
@@ -338,11 +328,11 @@ function Project(props: ProjectProps) {
             )}
         </div>
 
-        <div class={tw`flex flex-row pt-4`}>
-          <p class={tw`font-light text-gray-600`}>{props.type}</p>
+        <div class="flex flex-row pt-4">
+          <p class="font-light text-gray-600">{props.type}</p>
         </div>
 
-        <p class={tw`pt-4 font-light`}>{props.description}</p>
+        <p class="pt-4 font-light">{props.description}</p>
       </div>
     </div>
   );
@@ -356,12 +346,10 @@ interface SidebarSectionProps {
 function SidebarSection(props: SidebarSectionProps) {
   return (
     <details>
-      <summary
-        class={tw`text-xl font-light cursor-pointer select-none`}
-      >
+      <summary class="text-xl font-light cursor-pointer select-none">
         {" " + props.title}
       </summary>
-      <div class={tw`p-2`}>
+      <div class="p-2">
         {props.children}
       </div>
     </details>
