@@ -1,0 +1,18 @@
+---
+import Footer from "../components/Footer.astro";
+import MainHead from "../components/MainHead.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<html lang="en" class="min-h-screen max-w-full">
+  <head>
+    <MainHead />
+  </head>
+  <main
+    class="bg-gradient-to-br from-slate-900 via-slate-700 to-slate-900 text-sky-200"
+  >
+    <Nav />
+    <main><slot /></main>
+    <Footer />
+  </main>
+</html>
