@@ -7,6 +7,6 @@ import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "jamalam360.github.io",
+  site: "https://jamalam360.github.io",
   integrations: [tailwind(), sitemap(), preact(), image(), prefetch()],
 });
