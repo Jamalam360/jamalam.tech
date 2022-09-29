@@ -19,40 +19,45 @@ const tags: Record<string, string> = {
 };
 ---
 
-<Base>
-  <div class="flex w-full justify-center my-4">
-    <div class="flex flex-row flex-wrap w-2/3">
+<Base
+  title="Blog | Jamalam"
+  description="My blog, where I post random things that I feel like writing about."
+>
+  <div class="flex w-full justify-center">
+    <div class="flex flex-row flex-wrap justify-center w-4/5">
       {
         posts.map((post) => {
           const { frontmatter } = post;
           return (
-            <div class="w-1/2 flex flex-col items-center">
-              <Image
-                src={frontmatter.image}
-                alt={frontmatter.title}
-                width={264}
-                height={264}
-                class="object-contain rounded hover:rounded-xl duration-200 mb-2"
-              />
-              <div class="flex flex-row items-center space-x-2 align-middle">
-                <h2 class="text-2xl font-bold">
-                  <a href={post.url}>{frontmatter.title}</a>
-                </h2>
-                <span class="text-sm text-gray-500">
-                  {new Date(frontmatter.publishDate).toLocaleDateString()}
-                </span>
+            <a href={post.url} class="w-1/4 px-4">
+              <div class="w-full flex flex-col items-center my-2 px-2 bg-slate-700 hover:bg-slate-600 hover:rounded-md duration-100 rounded">
+                <Image
+                  src={frontmatter.image}
+                  alt={frontmatter.title}
+                  width={264}
+                  height={264}
+                  class="object-contain rounded-md hover:rounded-lg duration-100 mb-2 mt-3"
+                />
+                <div class="flex flex-row items-center space-x-2 align-middle">
+                  <h2 class="text-2xl text-blue-500 font-bold">
+                    {frontmatter.title}
+                  </h2>
+                  <span class="text-sm text-gray-500">
+                    {new Date(frontmatter.publishDate).toLocaleDateString()}
+                  </span>
+                </div>
+                <div class="flex flex-row justify-center flex-wrap w-2/3 space-x-1 pb-2">
+                  {frontmatter.tags.map((tag: string) => {
+                    return (
+                      <p class={`bg-${tags[tag]} rounded px-1 text-white`}>
+                        {tag}
+                      </p>
+                    );
+                  })}
+                </div>
+                <p class="px-4 text-center mb-2">{frontmatter.description}</p>
               </div>
-              <div class="flex flex-row justify-center flex-wrap w-2/3 space-x-1 pb-2">
-                {frontmatter.tags.map((tag: string) => {
-                  return (
-                    <p class={`bg-${tags[tag]} rounded px-1 text-white`}>
-                      {tag}
-                    </p>
-                  );
-                })}
-              </div>
-              <p class="px-4 text-center">{frontmatter.description}</p>
-            </div>
+            </a>
           );
         })
       }

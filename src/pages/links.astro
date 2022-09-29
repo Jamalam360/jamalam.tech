@@ -1,0 +1,55 @@
+---
+import Base from "../layouts/Base.astro";
+import { Image } from "@astrojs/image/components";
+
+const links = [
+  {
+    text: "GitHub",
+    icon: "/assets/icons/github.svg",
+    href: "https://github.com/Jamalam360",
+  },
+  {
+    text: "Twitter",
+    icon: "/assets/icons/twitter.svg",
+    href: "https://twitter.com/jamalamisadev",
+  },
+  {
+    text: "Maven",
+    icon: "/assets/icons/feather.svg",
+    href: "https://maven.jamalam.tech",
+  },
+  {
+    text: "Status",
+    icon: "/assets/icons/activity.svg",
+    href: "https://status.jamalam.tech",
+  },
+];
+---
+
+<Base>
+  <div class="w-full flex justify-center">
+    <div class="w-2/3 flex flex-wrap flex-row justify-center space-x-4">
+      {
+        links.map((link) => {
+          return (
+            <a
+              href={link.href}
+              target="_blank"
+              class="flex flex-row items-center justify-center bg-slate-700 hover:bg-slate-600 hover:rounded-md duration-100 rounded px-4 py-2"
+            >
+              <Image
+                class="w-6 h-6 pr-2"
+                src={link.icon}
+                alt={link.text}
+                height="24"
+                width="24"
+              />
+
+              {link.text}
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</Base>
