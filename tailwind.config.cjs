@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        jetbrains: ["JetBrains Mono", "monospace"],
+      },
+    },
   },
   safelist: [
     "bg-blue-400",
