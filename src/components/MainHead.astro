@@ -1,14 +1,47 @@
 ---
+import { SEO } from "astro-seo";
+
 const {
-  title = "Jamalam's Site",
+  title,
   description = "Jamalam's portfolio, blog, and more.",
+  image,
+  imageAlt,
+  publishDate,
+  tags,
 } = Astro.props;
 ---
 
 <meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+
+<SEO
+  title={"Jamalam's Site"}
+  description={description}
+  openGraph={{
+    basic: {
+      title,
+      type: "website",
+      image,
+    },
+    optional: {
+      description,
+    },
+    image: {
+      alt: imageAlt,
+    },
+    article: {
+      publishedTime: publishDate,
+      authors: ["Jamalam - @jamalamisadev"],
+      tags,
+    },
+  }}
+  twitter={{
+    site: "@jamalamisadev",
+    creator: "@jamalamisadev",
+  }}
+/>
+
 <title>{title}</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.bunny.net" />
