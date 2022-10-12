@@ -27,7 +27,7 @@ const {
           ["min", "maximize", "close"].map(async (i) => {
             return (
               <img
-                src={((await import(`./assets/${i}.png`)) as any).default}
+                src={((await import(`../assets/${i}.png`)) as any).default}
                 class="px-2 h-5"
               />
             );
