@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/project.astro
+layout: ../../layouts/Post.astro
 title: Mars Rover
 description: |
   We built an unofficial Mars Rover Landing site in celebration of NASA’s Perseverance Rover.
