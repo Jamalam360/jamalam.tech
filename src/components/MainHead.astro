@@ -18,24 +18,26 @@ const {
 <SEO
   title={"Jamalam's Site"}
   description={description}
-  openGraph={{
-    basic: {
-      title,
-      type: "website",
-      image,
-    },
-    optional: {
-      description,
-    },
-    image: {
-      alt: imageAlt,
-    },
-    article: {
-      publishedTime: publishDate,
-      authors: ["Jamalam - @jamalamisadev"],
-      tags,
-    },
-  }}
+  openGraph={title && image
+    ? {
+        basic: {
+          title,
+          type: "website",
+          image,
+        },
+        optional: {
+          description,
+        },
+        image: {
+          alt: imageAlt,
+        },
+        article: {
+          publishedTime: publishDate,
+          authors: ["Jamalam - @jamalamisadev"],
+          tags,
+        },
+      }
+    : undefined}
   twitter={{
     site: "@jamalamisadev",
     creator: "@jamalamisadev",

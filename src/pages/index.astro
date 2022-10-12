@@ -12,6 +12,9 @@ const neofetchContent = [
   "Name: James",
   "Location: UK",
   "Skills: Web Development, Modding, & Other Stuff",
+  "Languages: TS, HTML, CSS, Java, & Kotlin",
+  "Web Technologies: Astro (this!), Fresh, Tailwind, & Remix",
+  "Modding Technologies: Fabric, Quilt, & Architectury",
 ];
 ---
 
@@ -26,17 +29,17 @@ const neofetchContent = [
         neofetchContent.map((i) => {
           if (i.includes(":")) {
             return (
-              <div class="flex flex-row">
-                <p class="pl-4 text-sky-200 text-bold">{i.split(":")[0]}</p>
-                <p>{":" + i.split(":")[1]}</p>
-              </div>
+              <p>
+                <span class="pl-4 text-sky-200 text-bold">
+                  {i.split(":")[0]}</span>{}<span>{":" + i.split(":")[1]}</span>
+              </p>
             );
           } else if (i.includes("james@jamalam.tech")) {
             return (
-              <div class="flex flex-row">
-                <p class="pl-4 text-blue-400 text-bold">{i.split("@")[0]}</p>@
-                <p class="text-blue-400 text-bold">{i.split("@")[1]}</p>
-              </div>
+              <p>
+                <span class="pl-4 text-blue-400 text-bold">
+                  {i.split("@")[0]}</span>@<span class="text-blue-400 text-bold">{i.split("@")[1]}</span>
+              </p>
             );
           } else {
             return <p class="pl-4">{i}</p>;
