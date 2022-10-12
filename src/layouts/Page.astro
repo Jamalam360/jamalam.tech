@@ -37,6 +37,7 @@ const {
             ["close", "Close Button"],
           ].map(async (i) => {
             return (
+              // TODO: Turn these into SVGs
               <img
                 src={
                   ((await import(`../assets/${i[0]}.png`)) as any).default.src
