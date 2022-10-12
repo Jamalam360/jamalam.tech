@@ -1,0 +1,14 @@
+---
+import Prompt from "../components/Prompt.astro";
+import Page from "../layouts/Page.astro";
+import Dogs from "../assets/dogs.jpg";
+import ReturnHomeCommand from "../components/ReturnHomeCommand.astro";
+---
+
+<Page>
+  <Prompt command="doggies" />
+  <img src={Dogs.src} class="max-h-screen" />
+  <br />
+  <p>:)</p>
+  <ReturnHomeCommand />
+</Page>
