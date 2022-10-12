@@ -24,10 +24,10 @@ const {
         <a href="mailto:james@jamalam.tech" class="pl-2">james@jamalam.tech</a>
         <div class="flex-grow"></div>
         {
-          ["/min.png", "/maximize.png", "/close.png"].map(async (i) => {
+          ["min", "maximize", "close"].map(async (i) => {
             return (
               <img
-                src={((await import(`./assets${i}`)) as any).default}
+                src={((await import(`./assets/${i}.png`)) as any).default}
                 class="px-2 h-5"
               />
             );
