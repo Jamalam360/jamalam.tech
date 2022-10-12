@@ -2,6 +2,7 @@
 import Prompt from "../components/Prompt.astro";
 import Page from "../layouts/Page.astro";
 import profilePicture from "../assets/profile-picture-ascii-art.png";
+import LinkCommand from "../components/LinkCommand.astro";
 
 const { src: profilePictureSrc } = profilePicture as any;
 
@@ -19,6 +20,7 @@ const neofetchContent = [
 
 const links = [
   ["About", "about"],
+  ["Links & Contacts", "links"],
   ["Selected Projects", "projects"],
   ["Blog", "blog"]
 ]
@@ -55,13 +57,5 @@ const links = [
     </div>
   </div>
   <br />
-
-  <Prompt command="site-index" />
-  <ul>
-    {links.map((link) => {
-      return (
-        <li><a href={import.meta.env.BASE_URL + link[1]} class="underline">{link[0]}</a></li>
-      )
-    })}
-  </ul>
+  <LinkCommand command="site-index" links={links} />
 </Page>

@@ -1,12 +1,11 @@
 ---
 import Page from "../layouts/Page.astro";
 import Prompt from "../components/Prompt.astro";
+import ReturnHomeCommand from "../components/ReturnHomeCommand.astro";
 ---
 
 <Page>
   <Prompt command="not-found" />
   <p>Oops! Looks like you got lost :(</p>
-  <a href={import.meta.env.BASE_URL}
-    ><p class="underline">Return to home.</p>
-  </a>
+  <ReturnHomeCommand />
 </Page>

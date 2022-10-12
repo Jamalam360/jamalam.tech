@@ -1,0 +1,25 @@
+---
+import Prompt from "./Prompt.astro";
+
+interface Props {
+  command: string;
+  links: string[][];
+}
+
+const { links, command } = Astro.props;
+---
+
+<Prompt command={command} />
+<ul>
+  {
+    links.map((link) => {
+      return (
+        <li>
+          <a href={import.meta.env.BASE_URL + link[1]} class="underline">
+            {link[0]}
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

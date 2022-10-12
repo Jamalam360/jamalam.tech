@@ -1,6 +1,15 @@
 ---
 import { SEO } from "astro-seo";
 
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  publishDate?: string;
+  tags?: string[];
+}
+
 const {
   title,
   description = "Jamalam's portfolio, blog, and more.",

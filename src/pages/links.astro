@@ -1,0 +1,30 @@
+---
+import Page from "../layouts/Page.astro";
+import Prompt from "../components/Prompt.astro";
+import LinkCommand from "../components/LinkCommand.astro";
+import ReturnHomeCommand from "../components/ReturnHomeCommand.astro";
+
+const links = [
+  ["GitHub", "https://github.com/Jamalam360"],
+  ["Twitter", "https://twitter.com/jamalamisadev"],
+  ["Discord Server", "https://discord.jamalam.tech"],
+  ["Ko-fi", "https://ko-fi.com/jamalamdev"],
+  ["Curseforge", "https://curseforge.com/members/jamalam360"],
+  ["Modrinth", "https://modrinth.com/user/jamalam"],
+  ["Maven", "https://maven.jamalam.tech"],
+  ["Status", "https://status.jamalam.tech"],
+];
+---
+
+<Page>
+  <LinkCommand command="links" links={links} />
+  <Prompt command="contact" />
+  <p>
+    You can contact me using <a
+      href="mailto:james@jamalam.tech"
+      class="underline">my email</a
+    >, discord (<span class="italic">jamalam#0001</span>), or on my Discord
+    server, linked above.
+  </p>
+  <ReturnHomeCommand />
+</Page>
