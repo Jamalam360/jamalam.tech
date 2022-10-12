@@ -29,16 +29,16 @@ const neofetchContent = [
         neofetchContent.map((i) => {
           if (i.includes(":")) {
             return (
-              <p>
-                <span class="pl-4 text-sky-200 text-bold">
+              <p class="pl-4">
+                <span class="text-sky-200 text-bold">
                   {i.split(":")[0]}</span>{}<span>{":" + i.split(":")[1]}</span>
               </p>
             );
           } else if (i.includes("james@jamalam.tech")) {
             return (
-              <p>
-                <span class="pl-4 text-blue-400 text-bold">
-                  {i.split("@")[0]}</span>@<span class="text-blue-400 text-bold">{i.split("@")[1]}</span>
+              <p class="pl-4 text-blue-400 text-bold">
+                <span>
+                  {i.split("@")[0]}</span>@<span>{i.split("@")[1]}</span>
               </p>
             );
           } else {
