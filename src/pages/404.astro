@@ -6,5 +6,5 @@ import Prompt from "../components/Prompt.astro";
 <Page>
   <Prompt command="not-found" />
   <p>Oops! Looks like you got lost :(</p>
-  <a href={process.env.site}><p class="underline">Return to home.</p></a>
+  <a href={import.meta.env.SITE}><p class="underline">Return to home.</p></a>
 </Page>
