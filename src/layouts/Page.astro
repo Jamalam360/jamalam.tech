@@ -31,10 +31,17 @@ const {
         >
         <div class="flex-grow"></div>
         {
-          ["min", "maximize", "close"].map(async (i) => {
+          [
+            ["min", "Minimize Button"],
+            ["maximize", "Maximize Button"],
+            ["close", "Close Button"],
+          ].map(async (i) => {
             return (
               <img
-                src={((await import(`../assets/${i}.png`)) as any).default.src}
+                src={
+                  ((await import(`../assets/${i[0]}.png`)) as any).default.src
+                }
+                alt={i[1]}
                 class="px-2 h-5"
               />
             );
