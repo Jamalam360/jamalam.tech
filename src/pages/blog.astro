@@ -24,22 +24,6 @@ const posts = (await Astro.glob("./blog/**/*.md"))
   </p>
   <br />
   <ul>
-    <!-- {
-      posts.map((post) => {
-        return (
-          <li>
-            -{" "}
-            <a href={post.url} class="underline">
-              {post.frontmatter.title}{}</a>{": " +
-              post.frontmatter.description[0].toLowerCase() +
-              post.frontmatter.description.slice(1)}
-            <span class="italic">
-              {" (" + post.frontmatter.tags.join(", ") + ")"}
-            </span>
-          </li>
-        );
-      })
-    } -->
     {
       posts.map((post) => {
         return (
