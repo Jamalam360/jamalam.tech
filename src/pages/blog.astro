@@ -1,5 +1,61 @@
 ---
 import Page from "../layouts/Page.astro";
+import Prompt from "../components/Prompt.astro";
+import type { MarkdownInstance } from "astro";
+import ReturnHomeCommand from "../components/ReturnHomeCommand.astro";
+
+const posts = (await Astro.glob("./blog/**/*.md"))
+  .filter((post) => !post.frontmatter.draft)
+  .sort((a, b) => {
+    return (
+      new Date(b.frontmatter.publishDate).getDate() -
+      new Date(b.frontmatter.publishDate).getDate()
+    );
+  });
 ---
 
-<Page />
+<Page>
+  <Prompt command="projects" />
+  <p>
+    This is my little blog. I write about things that I want to write abut
+    (shocking!). The blog posts open in a boring old web page (no more terminal
+    :/) to make them more readable and to let me use code blocks and images
+    without it looking out of place.
+  </p>
+  <br />
+  <ul>
+    <!-- {
+      posts.map((post) => {
+        return (
+          <li>
+            -{" "}
+            <a href={post.url} class="underline">
+              {post.frontmatter.title}{}</a>{": " +
+              post.frontmatter.description[0].toLowerCase() +
+              post.frontmatter.description.slice(1)}
+            <span class="italic">
+              {" (" + post.frontmatter.tags.join(", ") + ")"}
+            </span>
+          </li>
+        );
+      })
+    } -->
+    {
+      posts.map((post) => {
+        return (
+          <li>
+            <h1>
+              <a href={post.url} class="font-bold underline">
+                {post.frontmatter.title}{}</a>
+              {" - " + new Date(post.frontmatter.publishDate).toDateString()}
+            </h1>
+            <p>Tags: <span class="italic">{post.frontmatter.tags.join(", ")}</span></p>
+            <p>{post.frontmatter.description}</p>
+            <br />
+          </li>
+        );
+      })
+    }
+  </ul>
+  <ReturnHomeCommand />
+</Page>
