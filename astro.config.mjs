@@ -22,4 +22,10 @@ export default defineConfig({
     }),
     compress(),
   ],
+  markdown: {
+    syntaxHighlight: "shiki",
+    shikiConfig: {
+      theme: "material-ocean",
+    },
+  },
 });
