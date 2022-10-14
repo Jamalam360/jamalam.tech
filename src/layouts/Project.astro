@@ -39,7 +39,11 @@ const { title, description, image, tags, category } = Astro.props.frontmatter;
         <p class="text-gray-400">
           {description}
         </p>
-        <img src={image} alt={title} class="max-w-full" />
+        <img
+          src={import.meta.env.BASE_URL + image}
+          alt={title}
+          class="max-w-full"
+        />
         <slot />
       </article>
     </div>

@@ -9,4 +9,6 @@ tags:
 publishDate: "Fri Oct 14 2022"
 ---
 
-So, yet another one!
+So, yet another one! I have once again rewritten my website, this time with Astro. I think it was worth it.
+
+# Before
