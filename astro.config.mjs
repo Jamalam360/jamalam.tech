@@ -7,10 +7,9 @@ import prefetch from "@astrojs/prefetch";
 import robotsTxt from "astro-robots-txt";
 import compress from "astro-compress";
 
-// https://astro.build/config
 export default defineConfig({
-  site: "https://jamalam360.github.io/",
-  base: "/jamalam.tech",
+  site: "https://jamalam.tech",
+  base: "/",
   integrations: [
     tailwind(),
     sitemap(),
