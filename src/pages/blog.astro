@@ -20,7 +20,7 @@ const posts = (await Astro.glob("./blog/**/*.md"))
   </p>
   <br />
   <ul>
-    {
+    {posts.length > 0 ?
       posts.map((post) => {
         return (
           <li>
@@ -34,7 +34,7 @@ const posts = (await Astro.glob("./blog/**/*.md"))
             <br />
           </li>
         );
-      })
+      }) : <p>Oops, looks like I haven't written anything yet...this is awkward.</p>
     }
   </ul>
   <ReturnHomeCommand />

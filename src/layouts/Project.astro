@@ -7,11 +7,10 @@ type Props = MarkdownLayoutProps<{
   title: string;
   description: string;
   image: string;
-  tags: string[];
   category: string;
 }>;
 
-const { title, description, image, tags, category } = Astro.props.frontmatter;
+const { title, description, image } = Astro.props.frontmatter;
 ---
 
 <html lang="en">
@@ -21,7 +20,6 @@ const { title, description, image, tags, category } = Astro.props.frontmatter;
       description={description}
       image={image}
       imageAlt={description}
-      tags={tags}
     />
   </head>
   <body class="bg-gray-900 pt-6 w-full min-h-screen flex flex-col items-center">
@@ -32,18 +30,24 @@ const { title, description, image, tags, category } = Astro.props.frontmatter;
     </a>
     <div class="flex flex-col items-center font-inter mb-8 mx-4 md:mx-0">
       <article class="prose prose-invert">
-        <p class="text-gray-400">
-          {category + " - " + tags.join(", ")}
-        </p>
         <h1>{title}</h1>
         <p class="text-gray-400">
           {description}
         </p>
-        <img
-          src={import.meta.env.BASE_URL + image}
-          alt={title}
-          class="max-w-full"
-        />
+        {
+          image.endsWith(".mp4") ? (
+            <video controls autoplay loop class="max-w-full w-full">
+              <source src={import.meta.env.BASE_URL + image} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <img
+              src={import.meta.env.BASE_URL + image}
+              alt={title}
+              class="max-w-full w-full"
+            />
+          )
+        }
         <slot />
       </article>
     </div>
