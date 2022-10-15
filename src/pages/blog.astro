@@ -1,0 +1,41 @@
+---
+import Page from "../layouts/Page.astro";
+import Prompt from "../components/Prompt.astro";
+import ReturnHomeCommand from "../components/ReturnHomeCommand.astro";
+
+const posts = (await Astro.glob("./blog/**/*.md"))
+  .filter((post) => !post.frontmatter.draft)
+  .sort((a, b) => {
+    return (
+      new Date(b.frontmatter.publishDate).getDate() -
+      new Date(b.frontmatter.publishDate).getDate()
+    );
+  });
+---
+
+<Page>
+  <Prompt command="projects" />
+  <p>
+    This is my little blog. I write about things that I want to write about - shocking!
+  </p>
+  <br />
+  <ul>
+    {posts.length > 0 ?
+      posts.map((post) => {
+        return (
+          <li>
+            <h1>
+              <a href={post.url} class="font-bold underline">
+                {post.frontmatter.title}{}</a>
+              {" - " + new Date(post.frontmatter.publishDate).toDateString()}
+            </h1>
+            <p>Tags: <span class="italic">{post.frontmatter.tags.join(", ")}</span></p>
+            <p>{post.frontmatter.description}</p>
+            <br />
+          </li>
+        );
+      }) : <p>Oops, looks like I haven't written anything yet...this is awkward.</p>
+    }
+  </ul>
+  <ReturnHomeCommand />
+</Page>

@@ -1,0 +1,64 @@
+---
+import { SEO } from "astro-seo";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  publishDate?: string;
+  tags?: string[];
+}
+
+const {
+  title,
+  description = "Jamalam's portfolio, blog, and more.",
+  image,
+  imageAlt,
+  publishDate,
+  tags,
+} = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<SEO
+  title={"Jamalam's Site"}
+  description={description}
+  openGraph={title && image
+    ? {
+        basic: {
+          title,
+          type: "website",
+          image,
+        },
+        optional: {
+          description,
+        },
+        image: {
+          alt: imageAlt,
+        },
+        article: {
+          publishedTime: publishDate,
+          authors: ["Jamalam - @jamalamisadev"],
+          tags,
+        },
+      }
+    : undefined}
+  twitter={{
+    site: "@jamalamisadev",
+    creator: "@jamalamisadev",
+  }}
+/>
+
+<title>{title}</title>
+
+<link rel="icon" href={import.meta.env.BASE_URL + "/favicon.ico"} />
+
+<link rel="preconnect" href="https://fonts.bunny.net" />
+<link
+  href="https://fonts.bunny.net/css?family=inter:400|jetbrains-mono:300&display=swap"
+  rel="stylesheet"
+/>

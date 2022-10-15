@@ -1,0 +1,54 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import Footer from "../components/Footer.astro";
+import MainHead from "../components/MainHead.astro";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  publishDate: string;
+}>;
+
+const { title, description, image, tags, publishDate } =
+  Astro.props.frontmatter;
+---
+
+<html lang="en">
+  <head>
+    <MainHead
+      title={title}
+      description={description}
+      image={image}
+      imageAlt={description}
+      publishDate={publishDate}
+      tags={tags}
+    />
+  </head>
+  <body class="bg-gray-900 pt-6 w-full min-h-screen flex flex-col items-center">
+    <a
+      href={import.meta.env.BASE_URL + "blog"}
+      class="text-white underline max-w-prose w-full mb-4 ml-4 md:ml-0"
+      ><p class="text-2xl">Back</p>
+    </a>
+    <div class="flex flex-col items-center font-inter mb-8 mx-4 md:mx-0">
+      <article class="prose prose-invert">
+        <p class="text-gray-400">
+          {new Date(publishDate).toDateString() + " - " + tags.join(", ")}
+        </p>
+        <h1>{title}</h1>
+        <p class="text-gray-400">
+          {description}
+        </p>
+        <img
+          src={import.meta.env.BASE_URL + image}
+          alt={title}
+          class="max-w-full"
+        />
+        <slot />
+      </article>
+    </div>
+    <Footer />
+  </body>
+</html>

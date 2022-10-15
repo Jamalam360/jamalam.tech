@@ -1,0 +1,79 @@
+---
+import Prompt from "../components/Prompt.astro";
+import ReturnHomeCommand from "../components/ReturnHomeCommand.astro";
+import Page from "../layouts/Page.astro";
+---
+
+<Page>
+  <Prompt command="about" />
+  <p>
+    Hi! Looks like you've stumbled across my site :). I'm James, or Jamalam, a
+    young developer from the UK.
+  </p>
+  <br />
+  <p>
+    I've been programming for upwards of 5 years now and over those years I have
+    learned a variety of skills. I have spent a lot of my time working on
+    Minecraft modding, which is how I learned Java, but have since focused my
+    time and energy on web projects, amongst other random things. So, here are
+    some of the things I think I'm good enough at to write down on a list :{">"}
+  </p>
+  <br />
+  <h1 class="font-bold">Skills</h1>
+  <ul>
+    {
+      [
+        "Java",
+        "Kotlin",
+        "TypeScript",
+        "Tailwind",
+        "HTML & CSS",
+        "(P)React",
+        "Fresh",
+        "Remix",
+        "Astro",
+        "Deno",
+        "Quilt & Fabric",
+        "Architectury",
+      ].map((i) => <li>{"- " + i}</li>)
+    }
+    <li>
+      - <span style="text-decoration: line-through;"
+        >Wrote hello world in rust once</span
+      >
+    </li>
+  </ul>
+  <br />
+  <p>
+    If you want to see more specific examples of my work, check out my <a
+      href={import.meta.env.BASE_URL + "projects"}
+      class="underline">selected projects</a
+    >.
+  </p>
+  <br />
+  <h1 class="font-bold">Fun Facts</h1>
+  <ul>
+    <li>
+      - In my time spent not programming I enjoy boats, engineering, and product
+      design.
+    </li>
+    <li>
+      - I have two dogs (Winnie the
+      <span class="text-yellow-400">golden</span> labrador, and Rio the <span
+        class="text-black bg-gray-600 font-bold">black</span
+      > labrador :]). You can see a photo of them <a
+        href={import.meta.env.BASE_URL + "dogs"}
+        class="underline">here</a
+      >, if you feel so inclined.
+    </li>
+    <li>
+      - My favourite colour is probably <span class="text-sky-700"
+        >sky blue</span
+      >.
+    </li>
+    <li>
+      - I like bands like Two Door Cinema Club & Catfish and the Bottlemen.
+    </li>
+  </ul>
+  <ReturnHomeCommand />
+</Page>
