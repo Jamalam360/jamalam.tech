@@ -2,7 +2,7 @@
 layout: ../../layouts/Post.astro
 title: A New Site
 description: All about my new terminal-themed personal site.
-image: /blog-assets/jamalamtech-new-site-homepage.png
+image: /blog-assets/jamalamtech-new.png
 tags:
   - Web
   - Meta

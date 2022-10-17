@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/Project.astro
 title: jamalam.tech
-image: /blog-assets/jamalamtech-new-site-homepage.png
+image: /blog-assets/jamalamtech-new.png
 description: |
   My personal terminal-themed website - the one you're on right now!
 category: web
