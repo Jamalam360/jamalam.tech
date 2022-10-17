@@ -18,7 +18,7 @@ const { links, command, externalLinks } = Astro.props;
           return (
             <li>
               -{" "}
-              <a href={import.meta.env.BASE_URL + link[1]} class="underline">
+              <a href={link[1]} class="underline">
                 {link[0]}
               </a>
             </li>

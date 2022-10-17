@@ -2,6 +2,7 @@
 import type { MarkdownLayoutProps } from "astro";
 import Footer from "../components/Footer.astro";
 import MainHead from "../components/MainHead.astro";
+import Media from "../components/Media.astro";
 
 type Props = MarkdownLayoutProps<{
   title: string;
@@ -28,7 +29,7 @@ const { title, description, image, tags, publishDate } =
   </head>
   <body class="bg-gray-900 pt-6 w-full min-h-screen flex flex-col items-center">
     <a
-      href={import.meta.env.BASE_URL + "blog"}
+      href={"/blog"}
       class="text-white underline max-w-prose w-full mb-4 ml-4 md:ml-0"
       ><p class="text-2xl">Back</p>
     </a>
@@ -41,11 +42,7 @@ const { title, description, image, tags, publishDate } =
         <p class="text-gray-400">
           {description}
         </p>
-        <img
-          src={import.meta.env.BASE_URL + image}
-          alt={title}
-          class="max-w-full"
-        />
+        <Media href={image} alt={title} />
         <slot />
       </article>
     </div>

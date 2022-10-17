@@ -1,0 +1,19 @@
+---
+interface Props {
+  href: string;
+  alt?: string;
+}
+
+const { href: image, alt } = Astro.props;
+---
+
+{
+  image && image.endsWith(".mp4") ? (
+    <video controls autoplay loop class="max-w-full w-full">
+      <source src={image} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  ) : image ? (
+    <img src={image} alt={alt} class="max-w-full w-full" />
+  ) : undefined
+}
