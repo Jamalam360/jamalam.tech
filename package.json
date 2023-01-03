@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/deno": "^1.0.1",
     "@astrojs/image": "^0.7.1",
-    "@astrojs/preact": "^1.1.0",
+    "@astrojs/preact": "^0.2.0",
     "@astrojs/prefetch": "^0.0.7",
     "@astrojs/rss": "^1.0.1",
     "@astrojs/sitemap": "^1.0.0",
