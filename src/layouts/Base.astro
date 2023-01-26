@@ -1,0 +1,123 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Jamalam's Site",
+  description = "Jamalam's portfolio, blog, and more.",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=montserrat:200,400,600|jetbrains-mono:400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      data-goatcounter="https://jamalam.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+
+    <!-- Small inline script for the navbar -->
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        let navbarList = document.getElementById("navbar-list")!;
+        document.getElementById("navbar-button")!.onclick = () => {
+          if (navbarList.classList.contains("hidden")) {
+            navbarList.classList.remove("hidden");
+          } else {
+            navbarList.classList.add("hidden");
+          }
+        };
+      });
+    </script>
+  </head>
+  <body
+    class="container min-h-screen bg-white dark:bg-gray-900 dark:text-gray-100 font-montserrat"
+  >
+    <nav
+      class="w-full flex flex-row flex-wrap justify-between items-center pt-2.5 border-b border-slate-100 dark:border-gray-700"
+    >
+      <!-- Title -->
+      <a href="/" class="px-2.5 pb-2.5"><h1 class="text-2xl">Jamalam</h1></a>
+
+      <!-- Navigation -->
+      <button
+        id="navbar-button"
+        type="button"
+        class="inline-flex items-center pb-2.5 px-2.5 text-sm rounded-lg md:hidden"
+        aria-controls="navbar-list"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open navigation menu</span>
+        <svg
+          class="w-6 h-6"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+
+      <!-- Navbar -->
+      <div
+        class="hidden w-full transition-[display] md:block md:w-auto"
+        id="navbar-list"
+      >
+        <ul class="flex flex-col md:flex-row md:space-x-8">
+          {
+            [
+              ["/", "Home"],
+              ["/blog", "My Blog"],
+              ["/portfolio", "My Portfolio"],
+              ["/contact", "Contact Me"],
+            ].map((navlink) => (
+              <li>
+                <a
+                  href={navlink[0]}
+                  class={`block pl-4 py-3 text-md ${
+                    navlink[0] == Astro.url.pathname && "font-semibold"
+                  } border-y border-slate-100 uppercase dark:border-gray-700`}
+                  aria-current="page"
+                  rel="prefetch"
+                >
+                  {navlink[1]}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="min-h-[85vh] flex flex-col items-center">
+      <slot />
+    </main>
+
+    <!-- Copyright footer -->
+    <footer
+      class="mx-auto py-4 max-h-4 mb-4 border-t border-slate-100 dark:border-gray-700 text-sm text-center font-extralight"
+    >
+      &copy Jamalam, {new Date().getFullYear()}
+    </footer>
+  </body>
+</html>

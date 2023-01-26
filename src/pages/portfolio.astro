@@ -1,0 +1,25 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = await Astro.glob("./project/**/*.mdx");
+---
+
+<Base>
+  <Hero>
+    <h2 class="text-3xl text-center uppercase">My Portfolio</h2>
+    <p class="text-2xl text-center font-extralight mx-8">
+      A small set of projects I have selected to show off
+    </p>
+  </Hero>
+
+  <div class="flex flex-col space-y-8">
+  {
+    projects.map((project) => (
+      // @ts-ignore
+      <ProjectCard {...project.frontmatter} url={project.url} />
+    ))
+  }
+  </div>
+</Base>

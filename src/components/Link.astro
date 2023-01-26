@@ -1,0 +1,11 @@
+---
+interface Props {
+  href: string;
+  rel?: "prefetch";
+  className?: string;
+}
+
+const { href, rel, className } = Astro.props;
+---
+
+<a class={`text-blue-500 hover:underline ${className}`} href={href} rel={rel}><slot /></a>

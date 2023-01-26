@@ -1,11 +1,9 @@
 ---
-import Page from "../layouts/Page.astro";
-import Prompt from "../components/Prompt.astro";
-import ReturnHomeCommand from "../components/ReturnHomeCommand.astro";
+import Heading from "../components/Heading.astro";
+import Base from "../layouts/Base.astro";
 ---
 
-<Page>
-  <Prompt command="not-found" />
-  <p>Oops! Looks like you got lost :(</p>
-  <ReturnHomeCommand />
-</Page>
+<Base>
+  <Heading>404 - Not Found</Heading>
+  <h2 class="h-48 align-middle text-[8rem] font-bold pt-28">:(</h2>
+</Base>

@@ -1,14 +1,9 @@
 ---
-import Prompt from "../components/Prompt.astro";
-import Page from "../layouts/Page.astro";
-import Dogs from "../assets/dogs.jpg";
-import ReturnHomeCommand from "../components/ReturnHomeCommand.astro";
+import Base from "../layouts/Base.astro";
 ---
 
-<Page>
-  <Prompt command="doggies" />
-  <img src={Dogs.src} class="max-h-screen" />
+<Base>
+  <img src="/assets/pages/dogs.jpg" class="object-contain w-full p-6" />
   <br />
-  <p>:)</p>
-  <ReturnHomeCommand />
-</Page>
+  <h2 class="text-[4rem] font-bold">:)</h2>
+</Base>

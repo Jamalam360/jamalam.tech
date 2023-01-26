@@ -1,9 +1,9 @@
 ---
-import Page from "../layouts/Page.astro";
-import Prompt from "../components/Prompt.astro";
-import ReturnHomeCommand from "../components/ReturnHomeCommand.astro";
+import Hero from "../components/Hero.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Base from "../layouts/Base.astro";
 
-const posts = (await Astro.glob("./blog/**/*.md"))
+const posts = (await Astro.glob("./blog/**/*.mdx"))
   .filter((post) => !post.frontmatter.draft)
   .sort((a, b) => {
     return (
@@ -13,29 +13,21 @@ const posts = (await Astro.glob("./blog/**/*.md"))
   });
 ---
 
-<Page>
-  <Prompt command="blog-posts" />
-  <p>
-    This is my little blog. I write about things that I want to write about, be that programming & computer science, or product design & engineering.
-  </p>
-  <br />
-  <ul>
-    {posts.length > 0 ?
-      posts.map((post) => {
-        return (
-          <li>
-            <h1>
-              <a href={post.url} class="font-bold underline">
-                {post.frontmatter.title}{}</a>
-              {" - " + new Date(post.frontmatter.publishDate).toDateString()}
-            </h1>
-            <p>Tags: <span class="italic">{post.frontmatter.tags.join(", ")}</span></p>
-            <p>{post.frontmatter.description}</p>
-            <br />
-          </li>
-        );
-      }) : <p>Oops, looks like I haven't written anything yet...this is awkward.</p>
-    }
-  </ul>
-  <ReturnHomeCommand />
-</Page>
+<Base>
+  <Hero>
+    <h2 class="text-3xl text-center uppercase">My Blog</h2>
+    <p class="text-2xl text-center font-extralight mx-8">
+      All about whatever I want :)
+    </p>
+  </Hero>
+
+  <div class="flex flex-col space-y-8">
+
+  {
+    posts.map((post) => (
+      // @ts-ignore
+      <ProjectCard {...(post.frontmatter)} />
+    ))
+  }
+  </div>
+</Base>

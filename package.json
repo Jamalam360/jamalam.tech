@@ -9,11 +9,13 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "fmt": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/deno": "^1.0.1",
     "@astrojs/image": "^0.7.1",
+    "@astrojs/mdx": "^0.14.0",
     "@astrojs/preact": "^0.2.0",
     "@astrojs/prefetch": "^0.0.7",
     "@astrojs/rss": "^1.0.1",
@@ -28,6 +30,7 @@
     "@tailwindcss/typography": "^0.5.7",
     "astro-compress": "1.0.12",
     "astro-robots-txt": "^0.3.10",
+    "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.5.5"
   }
 }
