@@ -1,6 +1,6 @@
 ---
 import Hero from "../components/Hero.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import PostPreview from "../components/PostPreview.astro";
 import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
 
@@ -23,11 +23,6 @@ const posts = (await getCollection("blog"))
   </Hero>
 
   <div class="flex flex-col space-y-8">
-    {
-      posts.map((post) => (
-        // @ts-ignore
-        <ProjectCard {...post.data} />
-      ))
-    }
+    {posts.map((post) => <PostPreview {...post.data} slug={post.slug} />)}
   </div>
 </Base>

@@ -13,7 +13,7 @@ import { defineConfig } from "astro/config";
 //TODO: Clean out /public
 //TODO: Finish timeline
 //TODO: Deploy
-//TODO: Change frontmatter format to have `image` be an object with `url` and `alt` properties
+//TODO: Non-mobile styling
 
 // https://astro.build/config
 export default defineConfig({

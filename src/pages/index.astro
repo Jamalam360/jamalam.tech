@@ -2,19 +2,9 @@
 import Heading from "../components/Heading.astro";
 import Hero from "../components/Hero.astro";
 import Link from "../components/Link.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import PostPreview from "../components/PostPreview.astro";
 import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
-
-const FEATURED_PROJECT_NAMES = [
-  "right-click-harvest",
-  "utility-belt",
-  "grow-mobs",
-];
-
-const projects = await getCollection("projects").then((a) =>
-  a.filter((e) => FEATURED_PROJECT_NAMES.some((e2) => e.slug.includes(e2)))
-);
 
 const posts = await getCollection("blog").then((a) =>
   a
@@ -58,7 +48,10 @@ const posts = await getCollection("blog").then((a) =>
     <p class="px-4 mb-4">
       I've been programming for upwards of 5 years now, starting with Raspberry
       Pi based robots with Python, then learning Java for Minecraft modding, and
-      now I'm playing around with web development, and Rust.
+      now I'm playing around with web development, and Rust. You can find a
+      timeline of some of my projects on my <Link href="/portfolio">
+        portfolio
+      </Link> page.
     </p>
     <p class="px-4 mb-4">
       When I'm not programming (0_0), I enjoy boats, engineering/product design,
@@ -67,24 +60,6 @@ const posts = await getCollection("blog").then((a) =>
       > is my favourite colour (although I'm colour blind), and I love indie rock.
     </p>
 
-    <!-- Featured Projects List -->
-    <div class="w-full">
-      <Heading>Featured Projects</Heading>
-      <p class="px-4 mb-8 text-center">
-        You can find more projects on the <Link href="/portfolio">
-          portfolio
-        </Link> page.
-      </p>
-      <div class="flex flex-col space-y-8">
-        {
-          projects.map((pro) => (
-            // @ts-ignore
-            <ProjectCard {...pro.frontmatter} />
-          ))
-        }
-      </div>
-    </div>
-
     <!-- Latest Blog Post List -->
     <div class="w-full">
       <Heading>Latest Blog Posts</Heading>
@@ -92,12 +67,7 @@ const posts = await getCollection("blog").then((a) =>
         You can find more projects on the <Link href="/blog">blog</Link> page.
       </p>
       <div class="flex flex-col space-y-8">
-        {
-          posts.map((post) => (
-            // @ts-ignore
-            <ProjectCard {...post.frontmatter} />
-          ))
-        }
+        {posts.map((post) => <PostPreview {...post.data} slug={post.slug} />)}
       </div>
     </div>
   </div>
