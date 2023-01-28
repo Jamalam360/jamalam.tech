@@ -2,13 +2,14 @@
 import Hero from "../components/Hero.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
 
-const posts = (await Astro.glob("./blog/**/*.mdx"))
-  .filter((post) => !post.frontmatter.draft)
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
   .sort((a, b) => {
     return (
-      new Date(b.frontmatter.publishDate).getDate() -
-      new Date(b.frontmatter.publishDate).getDate()
+      new Date(b.data.publishDate).getDate() -
+      new Date(b.data.publishDate).getDate()
     );
   });
 ---
@@ -26,7 +27,7 @@ const posts = (await Astro.glob("./blog/**/*.mdx"))
   {
     posts.map((post) => (
       // @ts-ignore
-      <ProjectCard {...(post.frontmatter)} />
+      <ProjectCard {...(post.data)} />
     ))
   }
   </div>

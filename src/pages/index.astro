@@ -4,6 +4,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 import Heading from "../components/Heading.astro";
 import Link from "../components/Link.astro";
 import Hero from "../components/Hero.astro";
+import { getCollection } from "astro:content";
 
 const FEATURED_PROJECT_NAMES = [
   "right-click-harvest",
@@ -11,17 +12,17 @@ const FEATURED_PROJECT_NAMES = [
   "grow-mobs",
 ];
 
-const projects = await Astro.glob("./project/**/*.mdx").then((a) =>
-  a.filter((e) => FEATURED_PROJECT_NAMES.some((e2) => e.url?.includes(e2)))
+const projects = await getCollection("projects").then((a) =>
+  a.filter((e) => FEATURED_PROJECT_NAMES.some((e2) => e.slug.includes(e2)))
 );
 
-const posts = await Astro.glob("./blog/**/*.mdx").then((a) =>
+const posts = await getCollection("blog").then((a) =>
   a
-    .filter((e) => !e.frontmatter.draft)
+    .filter((e) => !e.data.draft)
     .sort(
       (a, b) =>
-        new Date(a.frontmatter.publishDate).getTime() -
-        new Date(b.frontmatter.publishDate).getTime()
+        new Date(a.data.publishDate).getTime() -
+        new Date(b.data.publishDate).getTime()
     )
     .slice(0, 3)
 );

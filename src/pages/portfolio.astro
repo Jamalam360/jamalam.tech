@@ -1,12 +1,17 @@
 ---
-import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
-import ProjectCard from "../components/ProjectCard.astro";
-
-const projects = await Astro.glob("./project/**/*.mdx");
+import Base from "../layouts/Base.astro";
+import timeline from "../projects.json";
+import Link from "../components/Link.astro";
 ---
 
 <Base>
+  <link
+    rel="stylesheet"
+    slot="head"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+  />
+
   <Hero>
     <h2 class="text-3xl text-center uppercase">My Portfolio</h2>
     <p class="text-2xl text-center font-extralight mx-8">
@@ -14,12 +19,52 @@ const projects = await Astro.glob("./project/**/*.mdx");
     </p>
   </Hero>
 
-  <div class="flex flex-col space-y-8">
-  {
-    projects.map((project) => (
-      // @ts-ignore
-      <ProjectCard {...project.frontmatter} url={project.url} />
-    ))
-  }
+  <div class="w-5/6 flex flex-col my-4">
+    <ul class="relative before:w-1 before:bg-slate-200 dark:before:bg-gray-800 before:h-full before:block before:absolute before:-left-4 before:rounded-full">
+    {
+      Object.keys(timeline).map((year) => (
+        <li class="pt-6 first:pt-0">
+          <header class="text-lg font-light italic pb-4">{year}</header>
+          {
+            //@ts-ignore
+            timeline[year].map((project) => (
+              <div class="flex flex-row">
+                <div class="-left-4 absolute block w-10 h-10 rounded-r-full bg-slate-200 dark:bg-gray-800">
+                  <i
+                    class={`devicon-${project.icon} absolute block text-4xl dark:text-gray-500 text-center w-10 align-middle leading-10`}
+                  />
+                </div>
+                <div class="ml-8">
+                  {
+                    project.title.link ? 
+                    (
+                      
+                      <h3 class="text-lg uppercase">
+                        <Link href={project.title.link}>{project.title.text}</Link> • <span class="font-extralight">{project.title.date}</span>
+                      </h3>
+                    ) : (
+                      <h3 class="text-lg uppercase">
+                        {project.title.text} • <span class="font-thin">{project.title.date}</span>
+                      </h3>
+                    )
+                  }
+                  {project.image && (
+                    <img
+                      class="py-2 w-full max-h-48 object-cover"
+                      src={project.image.source}
+                      alt={project.image.alt}
+                    />
+                  )}
+                  <p class="font-light">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </li>
+      ))
+    }
+    </ul>
   </div>
 </Base>

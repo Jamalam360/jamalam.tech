@@ -2,7 +2,7 @@ import rss from "@astrojs/rss";
 
 const glob = import.meta.glob("./blog/**/*.mdx", { eager: true });
 
-//TODO: Update the metadata for this
+//TODO: Update the metadata for this, and use content collections
 export function get() {
   return rss({
     title: "Jamalam's Blog",
