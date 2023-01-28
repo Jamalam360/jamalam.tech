@@ -1,18 +1,17 @@
-import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
-import compress from "astro-compress";
 import mdx from "@astrojs/mdx";
 import prefetch from "@astrojs/prefetch";
-import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import compress from "astro-compress";
+import robotsTxt from "astro-robots-txt";
+import { defineConfig } from "astro/config";
 
 //TODO: Lighthouse testing
 //TODO: Optimizations
 //TODO: Check Markdown syntax highlighting theme
 //TODO: Clean out /public
-//TODO: Add year to projects
-//TODO: Timeline of smaller projects
+//TODO: Finish timeline
 //TODO: Deploy
 //TODO: Change frontmatter format to have `image` be an object with `url` and `alt` properties
 

@@ -1,9 +1,9 @@
 ---
-import Base from "../layouts/Base.astro";
-import ProjectCard from "../components/ProjectCard.astro";
 import Heading from "../components/Heading.astro";
-import Link from "../components/Link.astro";
 import Hero from "../components/Hero.astro";
+import Link from "../components/Link.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
 
 const FEATURED_PROJECT_NAMES = [
@@ -46,7 +46,7 @@ const posts = await getCollection("blog").then((a) =>
       of mods, websites, and many things in between.
     </p>
   </Hero>
-  
+
   <!-- Main Content -->
   <div class="w-full">
     <!-- About Me -->
@@ -61,16 +61,19 @@ const posts = await getCollection("blog").then((a) =>
       now I'm playing around with web development, and Rust.
     </p>
     <p class="px-4 mb-4">
-      When I'm not programming (0_0), I enjoy boats, engineering/product design, and going for walks with <Link href="/dogs" rel="prefetch">my dogs</Link>. <span class="text-blue-500">Sky blue</span> is my favourite colour (although I'm colour blind), and I love indie rock.
+      When I'm not programming (0_0), I enjoy boats, engineering/product design,
+      and going for walks with <Link href="/dogs" rel="prefetch">my dogs</Link>. <span
+        class="text-blue-500">Sky blue</span
+      > is my favourite colour (although I'm colour blind), and I love indie rock.
     </p>
 
     <!-- Featured Projects List -->
     <div class="w-full">
       <Heading>Featured Projects</Heading>
       <p class="px-4 mb-8 text-center">
-        You can find more projects on the <Link href="/portfolio"
-          >portfolio</Link
-        > page.
+        You can find more projects on the <Link href="/portfolio">
+          portfolio
+        </Link> page.
       </p>
       <div class="flex flex-col space-y-8">
         {

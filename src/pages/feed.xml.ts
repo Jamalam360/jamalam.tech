@@ -1,22 +1,21 @@
 import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
 
-const glob = import.meta.glob("./blog/**/*.mdx", { eager: true });
+export async function get() {
+  const collection = await getCollection("blog");
 
-//TODO: Update the metadata for this, and use content collections
-export function get() {
   return rss({
     title: "Jamalam's Blog",
-    description:
-      "My blog, where I post random things that I feel like writing about.",
+    description: "All about whatever I want :)",
     site: import.meta.env.SITE,
-    items: Object.values(glob).map((post) => {
-      const { url, frontmatter } = post as any;
+    items: Object.values(collection).map((post) => {
+      const { slug, data } = post;
 
       return {
-        link: url,
-        title: frontmatter.title,
-        description: frontmatter.description,
-        pubDate: frontmatter.publishDate,
+        link: `${import.meta.env.BASE_URL}/blog/${slug}`,
+        title: data.title,
+        description: data.description,
+        pubDate: data.publishDate,
       };
     }),
     customData: `<language>en-us</language>`,
