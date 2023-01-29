@@ -1,0 +1,27 @@
+---
+import { getEntryBySlug } from "astro:content";
+import Hero from "../../components/Hero.astro";
+import Page from "../../layouts/Page.astro";
+
+const { slug } = Astro.params;
+const entry = await getEntryBySlug("blog", slug!);
+
+if (!entry || entry.data.draft) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await entry.render();
+
+const date = `${entry.data.publishDate.getDay()} ${entry.data.publishDate.toLocaleString("default", { month: "long" })} ${entry.data.publishDate.getFullYear()}`;
+---
+
+<Page>
+  <Hero>
+    <h1 class="text-2xl text-center uppercase">{entry.data.title}</h1>
+    <img src={entry.data.image.source} alt={entry.data.image.alt} class="object-cover w-5/6 rounded" />
+    <p class="font-light">James • {date}</p>
+  </Hero>
+  <article class="p-2 prose lg:prose-xl dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline">
+    <Content />
+  </article>
+</Page>

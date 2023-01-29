@@ -1,7 +1,7 @@
 ---
 import Hero from "../components/Hero.astro";
 import PostPreview from "../components/PostPreview.astro";
-import Base from "../layouts/Base.astro";
+import Page from "../layouts/Page.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog"))
@@ -14,7 +14,7 @@ const posts = (await getCollection("blog"))
   });
 ---
 
-<Base>
+<Page>
   <Hero>
     <h2 class="text-3xl text-center uppercase">My Blog</h2>
     <p class="text-2xl text-center font-extralight mx-8">
@@ -25,4 +25,4 @@ const posts = (await getCollection("blog"))
   <div class="flex flex-col space-y-8">
     {posts.map((post) => <PostPreview {...post.data} slug={post.slug} />)}
   </div>
-</Base>
+</Page>

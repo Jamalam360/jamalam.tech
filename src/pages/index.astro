@@ -3,7 +3,7 @@ import Heading from "../components/Heading.astro";
 import Hero from "../components/Hero.astro";
 import Link from "../components/Link.astro";
 import PostPreview from "../components/PostPreview.astro";
-import Base from "../layouts/Base.astro";
+import Page from "../layouts/Page.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog").then((a) =>
@@ -18,7 +18,7 @@ const posts = await getCollection("blog").then((a) =>
 );
 ---
 
-<Base>
+<Page>
   <Hero>
     <!-- Profile Picture Background -->
     <div
@@ -71,4 +71,4 @@ const posts = await getCollection("blog").then((a) =>
       </div>
     </div>
   </div>
-</Base>
+</Page>
