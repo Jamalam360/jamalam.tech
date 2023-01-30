@@ -8,7 +8,7 @@ import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
 
 //TODO: Lighthouse testing
-//TODO: Deploy
+//TODO: SEO
 
 // https://astro.build/config
 export default defineConfig({
