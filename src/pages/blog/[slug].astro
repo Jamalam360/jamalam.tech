@@ -18,7 +18,7 @@ const date = `${entry.data.publishDate.getDay()} ${entry.data.publishDate.toLoca
 )} ${entry.data.publishDate.getFullYear()}`;
 ---
 
-<Page>
+<Page title={`${entry.data.title} - Jamalam's Blog`} description={entry.data.description}>
   <Hero>
     <h1 class="mx-2 text-2xl text-center uppercase">{entry.data.title}</h1>
     <img
