@@ -8,12 +8,7 @@ import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
 
 //TODO: Lighthouse testing
-//TODO: Optimizations
-//TODO: Clean out /public
-//TODO: Finish timeline
 //TODO: Deploy
-//TODO: Non-mobile styling
-//TODO: Properly setup prettier
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,7 +27,7 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: "shiki",
     shikiConfig: {
-      theme: "material-default"
+      theme: "material-default",
     },
   },
   output: "server",

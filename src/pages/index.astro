@@ -61,12 +61,12 @@ const posts = await getCollection("blog").then((a) =>
     </p>
 
     <!-- Latest Blog Post List -->
-    <div class="w-full">
+    <div class="w-full md:mb-8">
       <Heading>Latest Blog Posts</Heading>
       <p class="px-4 mb-8 text-center">
-        You can find more projects on the <Link href="/blog">blog</Link> page.
+        You can find more posts on the <Link href="/blog">blog</Link> page.
       </p>
-      <div class="flex flex-col space-y-8">
+      <div class="flex flex-col md:flex-row md:flex-wrap md:mx-16 space-y-8">
         {posts.map((post) => <PostPreview {...post.data} slug={post.slug} />)}
       </div>
     </div>

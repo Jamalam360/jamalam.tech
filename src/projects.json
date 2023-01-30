@@ -1,17 +1,284 @@
 {
+  "2023": [
+    {
+      "title": {
+        "text": "Death Timeout",
+        "date": "4/1/2023"
+      },
+      "description": "Death Timeout was a mod I was commissioned to create that prevents players from joining for 1 hour after they have died.",
+      "icon": "java-plain"
+    },
+    {
+      "title": {
+        "text": "A-Level ASM",
+        "date": "7/1/2023"
+      },
+      "description": "I created an assembler and VM/interpreter for the custom assembly instruction set that my A-Level specification uses.",
+      "icon": "rust-plain"
+    },
+    {
+      "title": {
+        "text": "Pest Parser",
+        "date": "20/1/2023",
+        "link": "https://github.com/pest-parser/pest"
+      },
+      "description": "I have contributed to the Rust crate 'Pest', which is a parser generator for Rust. I have implemented bug fixes, and recently have been creating a language server and VSCode extension for Pest. Over the next few months I plan on continuing work on Pest, potentially upgrading other aspects of the parser for my own use cases.",
+      "icon": "rust-plain"
+    }
+  ],
   "2022": [
     {
       "title": {
-        "text": "Lorem Ipsum",
-        "date": "12/19/2022",
-        "link": "https://github.com"
+        "text": "Bloom",
+        "date": "2/2/2022",
+        "link": "https://github.com/Jamlam360/bloom"
       },
-      "description": "Lorem Ipsum roughly translates from Latin into 'Pain Itself' in English. That really makes you think doesn't it?",
-      "icon": "rust-plain",
+      "description": "Bloom is a Deno library for creating and interacting with Bloom filters, a probabilistic data structure.",
+      "icon": "denojs-plain"
+    },
+    {
+      "title": {
+        "text": "Dishooks",
+        "date": "6/2/2022",
+        "link": "https://github.com/Jamlam360/dishooks"
+      },
+      "description": "Dishooks is a Deno library for posting to Discord webhooks.",
+      "icon": "denojs-plain"
+    },
+    {
+      "title": {
+        "text": "Termidle",
+        "date": "16/2/2022",
+        "link": "https://github.com/Jamlam360/termidle"
+      },
+      "description": "I created a Deno application that allows you to play Wordle on the CLI.",
+      "icon": "denojs-plain",
       "image": {
-        "source": "https://via.placeholder.com/600x400",
-        "alt": ""
+        "source": "/assets/portfolio/termidle.png",
+        "alt": "A screenshot of a Wordle-like game running on the CLI."
       }
+    },
+    {
+      "title": {
+        "text": "Utility Belt",
+        "date": "27/5/2022",
+        "link": "https://github.com/JamCoreModding/utility-belt"
+      },
+      "description": "Utility Belt is a mod for the Fabric modloader that allows players to store their tools in an extra hotbar - their tool belt.",
+      "icon": "java-plain"
+    },
+    {
+      "title": {
+        "text": "BlanketCon",
+        "date": "10/6/2022",
+        "link": "https://blanketcon.modfest.net"
+      },
+      "description": "Two of my mods were present at BlanketCon, an in-game convention hosted by ModFest and QuiltMC.",
+      "icon": "java-plain",
+      "image": {
+        "source": "https://storage.ko-fi.com/cdn/useruploads/post/41f6eea0-50c2-4c06-8f4f-33db4b6a30c9_anyconv.com__mhs8lkg.jpg",
+        "alt": "A screenshot of a large tavern building in Minecraft."
+      }
+    },
+    {
+      "title": {
+        "text": "Modifold",
+        "date": "1/7/2022",
+        "link": "https://github.com/SilverAndro/Modifold"
+      },
+      "description": "I have contributed to Modifold, a Kotlin program that migrates Curseforge projects to Modrinth.",
+      "icon": "kotlin-plain"
+    },
+    {
+      "title": {
+        "text": "Birthday Invite RSVP",
+        "date": "7/7/2022"
+      },
+      "description": "I created a website that allows people to RSVP to a 60s-themed party, via fresh and MongoDB.",
+      "icon": "nodejs-plain",
+      "image": {
+        "source": "/assets/portfolio/birthday-invite-rsvp.png"
+      }
+    },
+    {
+      "title": {
+        "text": "Projectiles Bounce Off Slime Blocks",
+        "date": "21/7/2022"
+      },
+      "description": "PBOSB was a mod I was commissioned to create that makes projectiles bounce off of slime blocks in Minecraft.",
+      "icon": "java-plain"
+    },
+    {
+      "title": {
+        "text": "Minecraft but you can Grow Mobs",
+        "date": "30/7/2022"
+      },
+      "description": "I was commissioned to create this mod for the YouTuber Jagster, which allows you to grow mobs in Minecraft.",
+      "icon": "java-plain",
+      "image": {
+        "source": "/assets/portfolio/growmobs.jpg"
+      }
+    },
+    {
+      "title": {
+        "text": "Properties",
+        "date": "7/8/2022",
+        "link": "https://github.com/Jamlam360/properties"
+      },
+      "description": "I created a library for loading `.properties` files on Deno, supporting an extended version of the syntax that allows defining objects and arrays.",
+      "icon": "denojs-plain"
+    },
+    {
+      "title": {
+        "text": "Improperties",
+        "date": "7/8/2022",
+        "link": "https://github.com/Jamlam360/improperties"
+      },
+      "description": "I created a library for loading Improperties, an obscure configuration format. My module was the fist specification compliant parser for Improperties.",
+      "icon": "denojs-plain"
+    },
+    {
+      "title": {
+        "text": "Dynamo",
+        "date": "8/8/2022",
+        "link": "https://github.com/Jamlam360/dynamo"
+      },
+      "description": "Dynamo is a configuration library for Deno and Node applications. It supports loading config files in multiple formats, leaving configuration as the choice of the user.",
+      "icon": "denojs-plain"
+    },
+    {
+      "title": {
+        "text": "QuiltMC (Mappings)",
+        "date": "10/8/2022",
+        "link": "https://github.com/QuiltMC/quilt-mappings"
+      },
+      "description": "I contribute to Quilt Mappings, which is a mappings set for decompiling Minecraft. I review pull requests, as well contributing new mappings from time to time.",
+      "icon": "java-plain"
+    },
+    {
+      "title": {
+        "text": "Sourcecraft",
+        "date": "27/12/2021",
+        "link": "https://github.com/Jamalam360/sourcecraft"
+      },
+      "description": "Sourcecraft is a GitHub-actions based Minecraft decompiler, providing decompiled Minecraft sources for browsing.",
+      "icon": "denojs-plain"
+    },
+    {
+      "title": {
+        "text": "Pigeon Mail",
+        "date": "12/12/2021",
+        "link": "https://github.com/Jamalam360/pigeon-mail"
+      },
+      "description": "'Chat with a daily pen pal, completely anonymously.'; Pigeon Mail is a chat application that pairs you with a pen pal every day, built with Astro for Supabase's hackathon",
+      "icon": "nodejs-plain",
+      "image": {
+        "source": "/assets/portfolio/pigeon-mail.png",
+        "alt": "A screenshot of Pigeon Mail's homepage, containing a large world map and the tagline previously mentioned."
+      }
+    },
+    {
+      "title": {
+        "text": "Auto Recipe",
+        "date": "21/12/2022",
+        "link": "https://github.com/JamCoreModding/auto-recipe"
+      },
+      "description": "I forked an out-of-date Minecraft modding library and updated it to newer versions, ported it to Quilt, and added extra features to it.",
+      "icon": "java-plain"
+    }
+  ],
+  "2021": [
+    {
+      "title": {
+        "text": "Right Click Harvest",
+        "date": "3/4/2021",
+        "link": "https://github.com/JamCoreModding/right-click-harvest"
+      },
+      "description": "Right Click Harvest is my first and, to date, most downloaded Fabric mod. It provides a QOL feature, allowing players to harvest crops by right clicking.",
+      "icon": "java-plain"
+    },
+    {
+      "title": {
+        "text": "Reaping",
+        "date": "23/05/2021",
+        "link": "https://github.com/JamCoreModding/reaping"
+      },
+      "description": "Reaping is a multiplatform (supporting all 3 major modloaders) Minecraft mod that provides new methods to obtain food.",
+      "icon": "java-plain",
+      "image": {
+        "source": "https://github.com/JamCoreModding/reaping/blob/1.19.3/demo.gif?raw=true",
+        "alt": "A GIF of an animal being reaped in Minecraft."
+      }
+    },
+    {
+      "title": {
+        "text": "Sock's Enchantments",
+        "date": "27/8/2021"
+      },
+      "description": "The YouTuber SocksFor1 commissioned me to create this mod, which adds many different enchantments.",
+      "icon": "java-plain"
+    },
+    {
+      "title": {
+        "text": "Sock's Storms",
+        "date": "22/8/2021"
+      },
+      "description": "I was commissioned to create this mod for the YouTuber SocksFor1. It generates random storms every 1 minute, such as OP loot or enemies falling from the sky.",
+      "icon": "java-plain"
+    },
+    {
+      "title": {
+        "text": "Pinguino",
+        "date": "8/10/2021",
+        "link": "https://github.com/JamCoreDiscord/Pinguino"
+      },
+      "description": "Pinguino is a multi-purpose Discord bot written in Kotlin that provides many different modules and functionalities for Discord servers.",
+      "icon": "kotlin-plain"
+    },
+    {
+      "title": {
+        "text": "Jamtastic",
+        "date": "21/12/2021",
+        "link": "https://github.com/JamCoreModding/Jamtastic"
+      },
+      "description": "Jamtastic is a fun mod for Fabric that adds a jam jar, into which players can put any food in order to make jam from it. Porkchop jam, anyone?",
+      "icon": "java-plain",
+      "image": {
+        "source": "https://github.com/JamCoreModding/jamtastic/blob/main/demo.gif?raw=true",
+        "alt": "A GIF of a player making jam in Minecraft."
+      }
+    },
+    {
+      "title": {
+        "text": "Doogle",
+        "date": "27/12/2021"
+      },
+      "description": "Doogle was a website I created for a competition. It allows users to vote on a large number of Dogs and stores the result, with the intention of finding the most loved dog breeds. It had a Mongo database, accessed via a Deno-based backend and fresh frontend",
+      "icon": "denojs-plain",
+      "image": {
+        "source": "/assets/portfolio/doogle.png",
+        "alt": "The logo of Doogle."
+      }
+    },
+    {
+      "title": {
+        "text": "QuiltMC (Cozy)",
+        "date": "30/12/2021",
+        "link": "https://github.com/QuiltMC/cozy-discord"
+      },
+      "description": "I have contributed to QuiltMC's (a modloader) in-house Discord bot a number of times.",
+      "icon": "kotlin-plain"
+    }
+  ],
+  "2020": [
+    {
+      "title": {
+        "text": "Pi Wars",
+        "date": "10/7/2021",
+        "link": "https://piwars.org"
+      },
+      "description": "I was part of a team building a RaspberryPi based robot to complete several challenges. I handled all of the programming and hardware of the robot.",
+      "icon": "python-plain"
     }
   ]
 }

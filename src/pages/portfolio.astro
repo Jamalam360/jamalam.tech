@@ -30,10 +30,10 @@ import timeline from "../projects.json";
             {
               //@ts-ignore
               timeline[year].map((project) => (
-                <div class="flex flex-row">
-                  <div class="-left-4 absolute block w-10 h-10 rounded-r-full bg-slate-200 dark:bg-gray-800">
+                <div class="flex flex-row mb-6">
+                  <div class="-left-4 absolute block w-8 h-8 rounded-r-full bg-slate-200 dark:bg-gray-800">
                     <i
-                      class={`devicon-${project.icon} absolute block text-4xl dark:text-gray-500 text-center w-10 align-middle leading-10`}
+                      class={`devicon-${project.icon} absolute block text-2xl dark:text-gray-500 w-8 text-center align-middle leading-8`}
                     />
                   </div>
                   <div class="ml-8">
@@ -52,7 +52,7 @@ import timeline from "../projects.json";
                     )}
                     {project.image && (
                       <img
-                        class="py-2 w-full max-h-48 object-cover"
+                        class="py-2 w-full max-h-48 md:max-h-80 object-contain"
                         src={project.image.source}
                         alt={project.image.alt}
                       />
