@@ -1,0 +1,70 @@
+---
+import Hero from "../components/Hero.astro";
+import Link from "../components/Link.astro";
+import Page from "../layouts/Page.astro";
+import timeline from "../projects.json";
+---
+
+<Page>
+  <link
+    rel="stylesheet"
+    slot="head"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+  />
+
+  <Hero>
+    <h2 class="text-3xl text-center uppercase">My Portfolio</h2>
+    <p class="text-2xl text-center font-extralight mx-8">
+      A small set of projects I have selected to show off
+    </p>
+  </Hero>
+
+  <div class="w-5/6 flex flex-col my-4">
+    <ul
+      class="relative before:w-1 before:bg-slate-200 dark:before:bg-gray-800 before:h-full before:block before:absolute before:-left-4 before:rounded-full"
+    >
+      {
+        Object.keys(timeline).map((year) => (
+          <li class="pt-6 first:pt-0">
+            <header class="text-lg font-light italic pb-4">{year}</header>
+            {
+              //@ts-ignore
+              timeline[year].map((project) => (
+                <div class="flex flex-row mb-6">
+                  <div class="-left-4 absolute block w-8 h-8 rounded-r-full bg-slate-200 dark:bg-gray-800">
+                    <i
+                      class={`devicon-${project.icon} absolute block text-2xl dark:text-gray-500 w-8 text-center align-middle leading-8`}
+                    />
+                  </div>
+                  <div class="ml-8">
+                    {project.title.link ? (
+                      <h3 class="text-lg uppercase">
+                        <Link href={project.title.link}>
+                          {project.title.text}
+                        </Link>{" "}
+                        • <span class="font-thin">{project.title.date}</span>
+                      </h3>
+                    ) : (
+                      <h3 class="text-lg uppercase">
+                        {project.title.text} •{" "}
+                        <span class="font-thin">{project.title.date}</span>
+                      </h3>
+                    )}
+                    {project.image && (
+                      <img
+                        class="py-2 w-full max-h-48 md:max-h-80 object-contain"
+                        src={project.image.source}
+                        alt={project.image.alt}
+                      />
+                    )}
+                    <p class="font-light">{project.description}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Page>

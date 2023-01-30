@@ -1,0 +1,20 @@
+---
+interface Props {
+  href: string;
+  rel?: "prefetch";
+  className?: string;
+}
+
+const { href, rel, className } = Astro.props;
+const target =
+  href.includes(Astro.url.hostname) || href.startsWith("/")
+    ? {}
+    : { target: "_blank" };
+---
+
+<a
+  class={`text-blue-500 hover:underline ${className}`}
+  href={href}
+  rel={rel}
+  {...target}><slot /></a
+>

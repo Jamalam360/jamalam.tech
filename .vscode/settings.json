@@ -1,8 +1,0 @@
-{
-  "tailwindCSS.includeLanguages": {
-    "javascript": "astro"
-  },
-  "yaml.schemas": {
-    "https://json.schemastore.org/github-workflow.json": "file:///home/james/Desktop/Development/Web/jamalam.tech/.github/workflows/deploy.yml"
-  }
-}

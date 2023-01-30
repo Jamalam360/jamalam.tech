@@ -1,0 +1,44 @@
+---
+import Hero from "../components/Hero.astro";
+import Link from "../components/Link.astro";
+import Page from "../layouts/Page.astro";
+
+const links = [
+  ["GitHub", "https://github.com/Jamalam360"],
+  ["Twitter", "https://twitter.com/jamalamisadev"],
+  ["Discord", "https://discord.jamalam.tech"],
+  ["Ko-fi", "https://ko-fi.com/jamalamdev"],
+  ["Curseforge", "https://curseforge.com/members/jamalam360"],
+  ["Modrinth", "https://modrinth.com/user/jamalam"],
+  ["Maven", "https://maven.jamalam.tech"],
+  ["Status", "https://status.jamalam.tech"],
+];
+---
+
+<Page>
+  <Hero>
+    <h2 class="text-3xl text-center uppercase">Contact Me</h2>
+    <p class="text-2xl text-center font-extralight mx-8">
+      I am available for commissions, or to just have a chat :)
+    </p>
+  </Hero>
+
+  <div class="grid grid-cols-2 gap-y-8 pt-8">
+    {
+      links.map(([name, link], index) => (
+        <Link
+          href={link}
+          className={`text-2xl text-center font-extralight mx-8 ${
+            index % 2 == 0 ? "col-start-1" : "col-start-2"
+          }`}
+        >
+          {name}
+        </Link>
+      ))
+    }
+  </div>
+
+  <p class="pt-8">
+    You can also <Link href="mailto:james@jamalam.tech">email me</Link>.
+  </p>
+</Page>
