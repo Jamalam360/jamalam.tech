@@ -15,7 +15,7 @@ const { title, description, image, slug } = Astro.props;
 ---
 
 <div
-  class="md:w-1/3 flex flex-col items-center justify-center drop-shadow-2xl bg-slate-100 dark:bg-gray-800 pb-4"
+  class="md:w-1/3 flex flex-col items-center justify-center drop-shadow-2xl bg-slate-100 dark:bg-gray-800 pb-4 max-w-[40rem]"
 >
   <img src={image.source} alt={image.alt} class="object-cover mb-4 w-full" />
   <Link href={`/blog/${slug}`}>
