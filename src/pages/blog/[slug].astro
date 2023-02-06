@@ -16,9 +16,11 @@ const date = `${entry.data.publishDate.getDay()} ${entry.data.publishDate.toLoca
   "default",
   { month: "long" }
 )} ${entry.data.publishDate.getFullYear()}`;
+
+const readingMins = Math.ceil(entry.body.split(/\s+/).length / 225);
 ---
 
-<Page title={`${entry.data.title} - Jamalam's Blog`} description={entry.data.description}>
+<Page title={`${entry.data.title} - Jamalam's Blog`} description={entry.data.description} image={entry.data.image.source} alt={entry.data.image.alt}>
   <Hero>
     <h1 class="mx-2 text-2xl text-center uppercase">{entry.data.title}</h1>
     <img
@@ -26,7 +28,7 @@ const date = `${entry.data.publishDate.getDay()} ${entry.data.publishDate.toLoca
       alt={entry.data.image.alt}
       class="object-cover w-5/6 rounded"
     />
-    <p class="font-light">James • {date}</p>
+    <p class="font-light">James • {date} • {readingMins} minute{readingMins > 1 ? "s" : ""}</p>
   </Hero>
   <article
     class="p-2 prose lg:prose-xl prose-code:font-jetbrains dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline"
