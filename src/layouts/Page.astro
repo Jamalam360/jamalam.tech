@@ -1,14 +1,16 @@
 ---
-import SEO from 'astro-seo/src/SEO.astro';
-
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  alt?: string
 }
 
 const {
   title = "Jamalam's Site",
   description = "Jamalam's portfolio, blog, and more.",
+  image,
+  alt = "",
 } = Astro.props;
 ---
 
@@ -19,23 +21,16 @@ const {
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
-    <SEO
-      title={title}
-      description={description}
-      openGraph={{
-        basic: {
-          title,
-          type: "website",
-          image: "https://github.com/Jamalam360.png",
-          url: "https://jamalam.tech",
-        },
-        optional: {
-          description,
-          siteName: "jamalam.tech",
-          locale: "en_US",
-        }
-      }}
-    />
+    <meta name="description" content={description} />
+    <meta name="og:title" content={title} />
+    <meta name="og:description" content={description} />
+    <meta name="og:type" content="website" />
+    <meta name="og:url" content="https://jamalam.tech" />
+    <meta name="og:image" content={image} />
+    <meta name="og:image:alt" content={alt} />
+    <meta name="og:site_name" content="jamalam.tech" />
+    <meta name="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />    
 
     <link rel="icon" href="/favicon.ico" />
 
