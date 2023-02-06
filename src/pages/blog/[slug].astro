@@ -26,7 +26,7 @@ const readingMins = Math.ceil(entry.body.split(/\s+/).length / 225);
     <img
       src={entry.data.image.source}
       alt={entry.data.image.alt}
-      class="object-cover w-5/6 rounded"
+      class="object-cover w-5/6 rounded max-w-[50rem]"
     />
     <p class="font-light">James • {date} • {readingMins} minute{readingMins > 1 ? "s" : ""}</p>
   </Hero>
