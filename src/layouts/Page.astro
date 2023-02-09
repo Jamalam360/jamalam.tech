@@ -10,7 +10,7 @@ const {
   title = "Jamalam's Site",
   description = "Jamalam's portfolio, blog, and more.",
   image,
-  alt = "",
+  alt,
 } = Astro.props;
 ---
 
@@ -26,8 +26,8 @@ const {
     <meta name="og:description" content={description} />
     <meta name="og:type" content="website" />
     <meta name="og:url" content="https://jamalam.tech" />
-    <meta name="og:image" content={image} />
-    <meta name="og:image:alt" content={alt} />
+    {image && <meta name="og:image" content={image} />}
+    {image && alt && <meta name="og:image:alt" content={alt} />}
     <meta name="og:site_name" content="jamalam.tech" />
     <meta name="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />    
