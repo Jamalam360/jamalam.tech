@@ -24,12 +24,12 @@ import timeline from "../projects.json";
       class="relative before:w-1 before:bg-slate-200 dark:before:bg-gray-800 before:h-full before:block before:absolute before:-left-4 before:rounded-full"
     >
       {
-        Object.keys(timeline).map((year) => (
+        Object.keys(timeline).reverse().map((year) => (
           <li class="pt-6 first:pt-0">
             <header class="text-lg font-light italic pb-4">{year}</header>
             {
               //@ts-ignore
-              timeline[year].map((project) => (
+              timeline[year].reverse().map((project) => (
                 <div class="flex flex-row mb-6">
                   <div class="-left-4 absolute block w-8 h-8 rounded-r-full bg-slate-200 dark:bg-gray-800">
                     <i
