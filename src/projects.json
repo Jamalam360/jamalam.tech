@@ -20,7 +20,7 @@
       "title": {
         "text": "Pest Parser",
         "date": "20/1/2023",
-        "link": "https://github.com/pest-parser/pest"
+        "link": "https://github.com/pest-parser"
       },
       "description": "I have contributed to the Rust crate 'Pest', which is a parser generator for Rust. I have implemented bug fixes, and recently have been creating a language server and VSCode extension for Pest. Over the next few months I plan on continuing work on Pest, potentially upgrading other aspects of the parser for my own use cases.",
       "icon": "rust-plain"
