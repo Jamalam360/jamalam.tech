@@ -7,8 +7,6 @@ import compress from "astro-compress";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
 
-//TODO: SEO
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://jamalam.tech",
