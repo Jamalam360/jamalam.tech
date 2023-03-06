@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Link from './Link.astro';
+
+interface Props {
+    series: CollectionEntry<"blog">[],
+    currentIdx: number,
+}
+
+const { series, currentIdx } = Astro.props;
+---
+
+<div class="px-6 py-2 rounded-xl bg-slate-100 dark:bg-gray-800">
+    This post is part {currentIdx} of {series.length} of a series.
+
+    <ol>
+        {
+            series.map((e, idx) => 
+                <li>
+                    <Link href={`/blog/${e.slug}`} className={idx === currentIdx ? "font-bold" : ""}> 
+                        {e.data.title}
+                    </Link> 
+                </li>
+            )
+        }
+    </ol>
+</div>

@@ -1,6 +1,7 @@
 ---
-import { getEntryBySlug } from "astro:content";
+import { CollectionEntry, getCollection, getEntryBySlug } from "astro:content";
 import Hero from "../../components/Hero.astro";
+import SeriesSummary from "../../components/SeriesSummary.astro";
 import Page from "../../layouts/Page.astro";
 
 const { slug } = Astro.params;
@@ -18,6 +19,15 @@ const date = `${entry.data.publishDate.getDay()} ${entry.data.publishDate.toLoca
 )} ${entry.data.publishDate.getFullYear()}`;
 
 const readingMins = Math.ceil(entry.body.split(/\s+/).length / 225);
+
+let series: CollectionEntry<"blog">[] = [];
+
+if (entry.data.series) {
+  const collection = await getCollection("blog", 
+    (t) => t.data.series && t.data.series.slug === entry.data.series!.slug,
+  );
+  series = collection;
+}
 ---
 
 <Page title={`${entry.data.title} - Jamalam's Blog`} description={entry.data.description} image={entry.data.image.source} alt={entry.data.image.alt}>
@@ -31,8 +41,10 @@ const readingMins = Math.ceil(entry.body.split(/\s+/).length / 225);
     <p class="font-light">James • {date} • {readingMins} minute{readingMins > 1 ? "s" : ""}</p>
   </Hero>
   <article
-    class="p-2 prose lg:prose-xl prose-code:font-jetbrains dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline"
+    class="p-2 mt-4 prose lg:prose-xl prose-code:font-jetbrains dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline"
   >
+    {series.length > 0 && <SeriesSummary currentIdx={entry.data.series!.part - 1} series={series} />}
     <Content />
+    {series.length > 0 && <SeriesSummary currentIdx={entry.data.series!.part - 1} series={series} />}
   </article>
 </Page>

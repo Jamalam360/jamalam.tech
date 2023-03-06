@@ -4,6 +4,10 @@ export const collections = {
   blog: defineCollection({
     schema: z.object({
       title: z.string(),
+      series: z.optional(z.object({
+        slug: z.string(),
+        part: z.number()
+      })),
       description: z.string(),
       image: z.object({
         source: z.string(),

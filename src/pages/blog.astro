@@ -22,9 +22,9 @@ const posts = (await getCollection("blog"))
     </p>
   </Hero>
 
-  <div
-    class="flex flex-col md:flex-row md:flex-wrap md:mx-16 md:my-8 space-y-8"
+  <ul
+    class="py-8 md:w-11/12 md:grid md:grid-cols-2 gap-4"
   >
     {posts.map((post) => <PostPreview {...post.data} slug={post.slug} />)}
-  </div>
+  </ul>
 </Page>
