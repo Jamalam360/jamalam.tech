@@ -3,7 +3,7 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
-  alt?: string
+  alt?: string;
 }
 
 const {
@@ -30,7 +30,7 @@ const {
     {image && alt && <meta name="og:image:alt" content={alt} />}
     <meta name="og:site_name" content="jamalam.tech" />
     <meta name="og:locale" content="en_US" />
-    <meta name="twitter:card" content="summary_large_image" />    
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="/favicon.ico" />
 
@@ -126,11 +126,89 @@ const {
       <slot />
     </main>
 
-    <!-- Copyright footer -->
+    <!-- Footer -->
     <footer
-      class="mx-auto py-4 max-h-4 mb-4 border-t border-slate-100 dark:border-gray-700 text-sm text-center font-extralight w-full max-w-[150rem]"
+      class="flex items-center justify-center space-x-6 py-4 flex-grow border-t border-slate-100 dark:border-gray-700 text-sm font-extralight w-full max-w-[150rem]"
     >
-      &copy Jamalam, {new Date().getFullYear()}
+      <div>
+        <div id="theme-light">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-sun text-gray-700 dark:text-gray-300"
+            ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"
+            ></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"
+            ></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"
+            ></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"
+            ></path><path d="m19.07 4.93-1.41 1.41"></path></svg
+          >
+        </div>
+
+        <div id="theme-dark" class="hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-moon text-gray-700 dark:text-gray-300"
+            ><path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
+          >
+        </div>
+      </div>
+
+      <p>&copy Jamalam, {new Date().getFullYear()}</p>
     </footer>
   </body>
+
+  <script>
+    let light = document.getElementById("theme-light")!;
+    let dark = document.getElementById("theme-dark")!;
+
+    // Account for localStorage, then OS theme, then default to light
+    if (localStorage.getItem("theme") == "dark") {
+      document.documentElement.classList.add("dark");
+    } else if (localStorage.getItem("theme") == "light") {
+      document.documentElement.classList.remove("dark");
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    if (document.documentElement.classList.contains("dark")) {
+      light.classList.remove("hidden");
+      dark.classList.add("hidden");
+    } else {
+      light.classList.add("hidden");
+      dark.classList.remove("hidden");
+    }
+
+    light.addEventListener("click", (e) => {
+      e.preventDefault();
+      light.classList.add("hidden");
+      dark.classList.remove("hidden");
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    });
+
+    dark.addEventListener("click", (e) => {
+      e.preventDefault();
+      dark.classList.add("hidden");
+      light.classList.remove("hidden");
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    });
+  </script>
 </html>
