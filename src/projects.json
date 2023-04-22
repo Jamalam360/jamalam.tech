@@ -24,6 +24,15 @@
       },
       "description": "I have contributed to the Rust crate 'Pest', which is a parser generator for Rust. I have implemented bug fixes, and maintain a language server and various editor extensions for Pest. Over the next few months I plan on continuing work on Pest, potentially upgrading other aspects of the parser for my own use cases.",
       "icon": "rust-plain"
+    },
+    {
+      "title": {
+        "text": "DailyUI",
+        "date": "1/4/2023",
+        "link": "https://codepen.io/Jamalam360"
+      },
+      "description": "I have been participating in the DailyUI challenge, where I create a UI design from a prompt every day for 100 days.",
+      "icon": "html5-plain"
     }
   ],
   "2022": [
