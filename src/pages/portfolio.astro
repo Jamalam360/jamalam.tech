@@ -29,11 +29,11 @@ import timeline from "../projects.json";
             <header class="text-lg font-light italic pb-4">{year}</header>
             {
               //@ts-ignore
-              timeline[year].reverse().map((project) => (
+              timeline[year].map((project) => (
                 <div class="flex flex-row mb-6">
                   <div class="-left-4 absolute block w-8 h-8 rounded-r-full bg-slate-200 dark:bg-gray-800">
                     <i
-                      class={`devicon-${project.icon} absolute block text-2xl dark:text-gray-500 w-8 text-center align-middle leading-8`}
+                      class={`devicon-${project.icon} absolute block text-2xl w-8 h-8 dark:text-gray-500 text-center align-middle leading-8`}
                     />
                   </div>
                   <div class="ml-8">
