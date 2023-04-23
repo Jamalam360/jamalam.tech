@@ -31,8 +31,17 @@
         "date": "1/4/2023",
         "link": "https://codepen.io/Jamalam360"
       },
-      "description": "I have been participating in the DailyUI challenge, where I create a UI design from a prompt every day for 100 days.",
+      "description": "I have been participating in the DailyUI challenge, where I create a UI design from a prompt every day for 100 days. I have also chosen to do the challenges in under 1 hour everyday.",
       "icon": "html5-plain"
+    },
+    {
+      "title": {
+        "text": "Colored Macro",
+        "date": "19/4/2023",
+        "link": "https://crates.io/crates/colored-macro"
+      },
+      "description": "I created a Rust crate that allows you to print colored text to the terminal using XML-like syntax.",
+      "icon": "rust-plain"
     }
   ],
   "2022": [
