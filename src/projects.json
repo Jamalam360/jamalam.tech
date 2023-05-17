@@ -42,6 +42,15 @@
       },
       "description": "I created a Rust crate that allows you to print colored text to the terminal using XML-like syntax.",
       "icon": "rust-plain"
+    },
+    {
+      "title": {
+        "text": "Performance Mark",
+        "date": "16/5/2023",
+        "link": "https://crates.io/crates/performance-mark-attribute"
+      },
+      "description": "I create a Rust macro that automatically adds configurable performance logging to methods.",
+      "icon": "rust-plain"
     }
   ],
   "2022": [
