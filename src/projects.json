@@ -22,7 +22,7 @@
         "date": "20/1/2023",
         "link": "https://github.com/pest-parser"
       },
-      "description": "I have contributed to the Rust crate 'Pest', which is a parser generator for Rust. I have implemented bug fixes, and maintain a language server and various editor extensions for Pest. Over the next few months I plan on continuing work on Pest, potentially upgrading other aspects of the parser for my own use cases.",
+      "description": "The Rust crate 'Pest' is a parser generator for Rust. I have implemented bug fixes, and maintain a language server and various editor extensions for Pest. Over the next few months I plan on continuing work on Pest, potentially upgrading other aspects of the parser for my own use cases.",
       "icon": "rust-plain"
     },
     {
@@ -40,7 +40,7 @@
         "date": "19/4/2023",
         "link": "https://crates.io/crates/colored-macro"
       },
-      "description": "I created a Rust crate that allows you to print colored text to the terminal using XML-like syntax.",
+      "description": "A Rust macro that allows you to print colored text to the terminal using XML-like syntax.",
       "icon": "rust-plain"
     },
     {
@@ -49,7 +49,7 @@
         "date": "16/5/2023",
         "link": "https://crates.io/crates/performance-mark-attribute"
       },
-      "description": "I create a Rust macro that automatically adds configurable performance logging to methods.",
+      "description": "A Rust macro that automatically adds configurable performance logging to methods.",
       "icon": "rust-plain"
     }
   ],
@@ -109,15 +109,6 @@
     },
     {
       "title": {
-        "text": "Modifold",
-        "date": "1/7/2022",
-        "link": "https://github.com/SilverAndro/Modifold"
-      },
-      "description": "I have contributed to Modifold, a Kotlin program that migrates Curseforge projects to Modrinth.",
-      "icon": "kotlin-plain"
-    },
-    {
-      "title": {
         "text": "Birthday Invite RSVP",
         "date": "7/7/2022"
       },
@@ -126,14 +117,6 @@
       "image": {
         "source": "/assets/portfolio/birthday-invite-rsvp.png"
       }
-    },
-    {
-      "title": {
-        "text": "Projectiles Bounce Off Slime Blocks",
-        "date": "21/7/2022"
-      },
-      "description": "PBOSB was a mod I was commissioned to create that makes projectiles bounce off of slime blocks in Minecraft.",
-      "icon": "java-plain"
     },
     {
       "title": {
@@ -148,20 +131,11 @@
     },
     {
       "title": {
-        "text": "Properties",
+        "text": "Properties & Improperties",
         "date": "7/8/2022",
         "link": "https://github.com/Jamlam360/properties"
       },
-      "description": "I created a library for loading `.properties` files on Deno, supporting an extended version of the syntax that allows defining objects and arrays.",
-      "icon": "denojs-plain"
-    },
-    {
-      "title": {
-        "text": "Improperties",
-        "date": "7/8/2022",
-        "link": "https://github.com/Jamlam360/improperties"
-      },
-      "description": "I created a library for loading Improperties, an obscure configuration format. My module was the fist specification compliant parser for Improperties.",
+      "description": "I created a library for loading `.properties` files on Deno, supporting an extended version of the syntax that allows defining objects and arrays. I also maintain a library for an obscure configuration format, Improperties. My module was the fist specification compliant parser for Improperties",
       "icon": "denojs-plain"
     },
     {
@@ -184,15 +158,6 @@
     },
     {
       "title": {
-        "text": "Sourcecraft",
-        "date": "27/12/2021",
-        "link": "https://github.com/Jamalam360/sourcecraft"
-      },
-      "description": "Sourcecraft is a GitHub-actions based Minecraft decompiler, providing decompiled Minecraft sources for browsing.",
-      "icon": "denojs-plain"
-    },
-    {
-      "title": {
         "text": "Pigeon Mail",
         "date": "12/12/2021",
         "link": "https://github.com/Jamalam360/pigeon-mail"
@@ -203,15 +168,6 @@
         "source": "/assets/portfolio/pigeon-mail.png",
         "alt": "A screenshot of Pigeon Mail's homepage, containing a large world map and the tagline previously mentioned."
       }
-    },
-    {
-      "title": {
-        "text": "Auto Recipe",
-        "date": "21/12/2022",
-        "link": "https://github.com/JamCoreModding/auto-recipe"
-      },
-      "description": "I forked an out-of-date Minecraft modding library and updated it to newer versions, ported it to Quilt, and added extra features to it.",
-      "icon": "java-plain"
     }
   ],
   "2021": [
@@ -236,22 +192,6 @@
         "source": "https://github.com/JamCoreModding/reaping/blob/1.19.3/demo.gif?raw=true",
         "alt": "A GIF of an animal being reaped in Minecraft."
       }
-    },
-    {
-      "title": {
-        "text": "Sock's Enchantments",
-        "date": "27/8/2021"
-      },
-      "description": "The YouTuber SocksFor1 commissioned me to create this mod, which adds many different enchantments.",
-      "icon": "java-plain"
-    },
-    {
-      "title": {
-        "text": "Sock's Storms",
-        "date": "22/8/2021"
-      },
-      "description": "I was commissioned to create this mod for the YouTuber SocksFor1. It generates random storms every 1 minute, such as OP loot or enemies falling from the sky.",
-      "icon": "java-plain"
     },
     {
       "title": {
