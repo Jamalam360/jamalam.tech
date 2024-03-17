@@ -1,9 +1,19 @@
 ---
-import Heading from "../components/Heading.astro";
 import Page from "../layouts/Page.astro";
 ---
 
-<Page>
-  <Heading>404 - Not Found</Heading>
-  <h2 class="h-48 align-middle text-[8rem] font-bold pt-28">:(</h2>
+<Page title="404 | Jamalam's Site" description="Page not found">
+  <p class="sad">:(</p>
+  <p>This page does not exist</p>
 </Page>
+
+<style>
+  .sad {
+    font-size: 3em;
+    font-weight: bold;
+  }
+
+  p {
+    text-align: center;
+  }
+</style>

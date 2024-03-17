@@ -1,20 +1,18 @@
-import { z, defineCollection } from "astro:content";
+import { z, defineCollection, getCollection } from "astro:content";
+
+const blog = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    publishDate: z.date(),
+    summary: z.string(),
+  }),
+});
 
 export const collections = {
-  blog: defineCollection({
-    schema: z.object({
-      title: z.string(),
-      series: z.optional(z.object({
-        slug: z.string(),
-        part: z.number()
-      })),
-      description: z.string(),
-      image: z.object({
-        source: z.string(),
-        alt: z.string(),
-      }),
-      publishDate: z.coerce.date(),
-      draft: z.boolean(),
-    }),
-  }),
+  blog,
 };
+
+export async function getBlogPosts() {
+  return await getCollection("blog").then((c) => c.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()));
+}

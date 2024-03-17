@@ -1,30 +1,23 @@
-import cloudflare from "@astrojs/cloudflare";
-import mdx from "@astrojs/mdx";
-import prefetch from "@astrojs/prefetch";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
+import cloudflare from "@astrojs/cloudflare";
+import compress from "astro-compress";
+import sitemap from "@astrojs/sitemap";
+
+import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://jamalam.tech",
   base: "/",
-  integrations: [
-    tailwind(),
-    sitemap(),
-    prefetch(),
-    robotsTxt({
-      host: "jamalam.tech",
-    }),
-    mdx(),
-  ],
-  markdown: {
-    syntaxHighlight: "shiki",
-    shikiConfig: {
-      theme: "material-default",
-    },
-  },
   output: "server",
   adapter: cloudflare(),
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: "vitesse-light",
+        dark: "vitesse-dark"
+      }
+    }
+  },
+  integrations: [compress(), sitemap(), robotsTxt()]
 });

@@ -1,50 +1,167 @@
 ---
-import { CollectionEntry, getCollection, getEntryBySlug } from "astro:content";
-import Hero from "../../components/Hero.astro";
-import SeriesSummary from "../../components/SeriesSummary.astro";
 import Page from "../../layouts/Page.astro";
+import { getCollection } from "astro:content";
+import { formatDate } from "../../util.ts";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+  }));
+}
+
+export const prerender = true;
 
 const { slug } = Astro.params;
-const entry = await getEntryBySlug("blog", slug!);
-
-if (!entry || entry.data.draft) {
-  return Astro.redirect("/404");
-}
-
-const { Content } = await entry.render();
-
-const date = `${entry.data.publishDate.getDay()} ${entry.data.publishDate.toLocaleString(
-  "default",
-  { month: "long" }
-)} ${entry.data.publishDate.getFullYear()}`;
-
-const readingMins = Math.ceil(entry.body.split(/\s+/).length / 225);
-
-let series: CollectionEntry<"blog">[] = [];
-
-if (entry.data.series) {
-  const collection = await getCollection("blog", 
-    (t) => t.data.series && t.data.series.slug === entry.data.series!.slug,
-  );
-  series = collection;
-}
+const posts = await getCollection("blog");
+const post = posts.find((post) => post.slug === slug)!;
+const { Content } = await post.render();
 ---
 
-<Page title={`${entry.data.title} - Jamalam's Blog`} description={entry.data.description} image={entry.data.image.source} alt={entry.data.image.alt}>
-  <Hero>
-    <h1 class="mx-2 text-2xl text-center uppercase">{entry.data.title}</h1>
-    <img
-      src={entry.data.image.source}
-      alt={entry.data.image.alt}
-      class="object-cover w-5/6 rounded max-w-[50rem]"
-    />
-    <p class="font-light">James • {date} • {readingMins} minute{readingMins > 1 ? "s" : ""}</p>
-  </Hero>
-  <article
-    class="p-2 mt-4 prose lg:prose-xl prose-code:font-jetbrains dark:prose-invert prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline"
-  >
-    {series.length > 0 && <SeriesSummary currentIdx={entry.data.series!.part - 1} series={series} />}
+<Page title={`${post.data.title} | Jamalam's Blog`} description={post.data.summary}>
+  <h1 class="title">{post.data.title}</h1>
+  <div class="summary">
+    <p>{post.data.summary}</p>
+    <span>&centerdot;</span>
+    <p class="date">{formatDate(post.data.publishDate)}</p>
+  </div>
+
+  <div class="prose">
     <Content />
-    {series.length > 0 && <SeriesSummary currentIdx={entry.data.series!.part - 1} series={series} />}
-  </article>
+  </div>
+
+  <details class="comments" id="giscus-container">
+    <summary>Comments</summary>
+    <script
+      id="giscus-script"
+      src="https://giscus.app/client.js"
+      data-repo="Jamalam360/jamalam.tech"
+      data-repo-id="R_kgDOHTGbbg"
+      data-category="Comments"
+      data-category-id="DIC_kwDOHTGbbs4CeAGQ"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="noborder_light"
+      data-lang="en"
+      crossorigin="anonymous"
+      async></script>
+  </details>
 </Page>
+
+<style>
+  .title {
+    margin-bottom: 0;
+  }
+
+  .summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px dashed var(--text-color);
+  }
+
+  .date {
+    color: var(--deemphasis-text-color);
+    font-size: 1rem;
+  }
+
+  .comments {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .comments summary {
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    .summary p {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<style is:global>
+  .prose {
+    width: 100%;
+    line-height: 1.2;
+  }
+
+  .prose p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+
+  .prose h1 {
+    font-size: 2em;
+    margin-top: 1.75em;
+    margin-bottom: 0.75em;
+  }
+
+  .prose h2 {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose h3 {
+    font-size: 1.25em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose p:has(img) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .prose img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 1em;
+  }
+
+  .prose code {
+    font-size: 0.85em;
+  }
+
+  .prose pre {
+    width: calc(100% - 2em);
+    border-radius: 1em;
+    padding: 1em;
+  }
+
+  .prose ol {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1.5em;
+  }
+
+  .prose ul {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1.5em;
+  }
+
+  .prose blockquote {
+    font-style: italic;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1em;
+    border-left: 0.25em solid var(--deemphasis-text-color);
+  }
+
+  @media (max-width: 600px) {
+    .prose blockquote {
+      margin-left: 0rem;
+    }
+  }
+</style>

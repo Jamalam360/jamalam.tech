@@ -1,27 +1,72 @@
 ---
-import Link from "./Link.astro";
+import type { getCollection } from "astro:content";
+import { formatDate } from "../util.ts";
 
 interface Props {
-  title: string;
-  description: string;
-  image: {
-    source: string;
-    alt: string;
-  };
-  slug: string;
+  post: Awaited<ReturnType<typeof getCollection<"blog">>>[0];
 }
 
-const { title, description, image, slug } = Astro.props;
+const {
+  post: {
+    data: { title, publishDate, summary },
+    slug,
+  },
+}: Props = Astro.props;
 ---
 
-<li
-  class="grid grid-rows-7 drop-shadow-xl bg-slate-100 dark:bg-gray-800 pb-4 max-w-[40rem]"
->
-  <img src={image.source} alt={image.alt} class="row-span-5 object-cover mb-4 w-full h-96" />
-  <Link href={`/blog/${slug}`}>
-    <h3 class="text-lg text-center uppercase px-2 mb-2">
-      {title}
-    </h3>
-  </Link>
-  <p class="px-4">{description}</p>
-</li>
+<div class="post-preview">
+  <div class="post-information">
+    <h2 class="post-title">
+      <a href={`/blog/${slug}`}>{title}</a>
+    </h2>
+    <div class="grow"></div>
+    <p class="post-date">Posted on {formatDate(publishDate)}</p>
+  </div>
+  <p class="post-summary">{summary}</p>
+</div>
+
+<style>
+  .post-preview {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dashed var(--text-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .post-information {
+    display: flex;
+    align-items: center;
+  }
+
+  .post-date {
+    color: var(--deemphasis-text-color);
+  }
+
+  .post-summary {
+    margin-top: 0rem;
+  }
+
+  @media (max-width: 600px) {
+    .post-information {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .post-title {
+      margin-bottom: 0rem;
+    }
+
+    .post-information p {
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .post-date {
+      font-size: 0.9rem;
+    }
+
+    .post-summary {
+      margin-top: 0.5rem;
+    }
+  }
+</style>

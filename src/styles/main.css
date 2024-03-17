@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Fira+Code:wght@300..700&display=swap");
+
+:root {
+  --bg-color: #f2f1ec;
+  --text-color: #1d1e18;
+  --deemphasis-text-color: #959580;
+  --accent-color: #db6c79;
+}
+
+:root .dark {
+  --bg-color: #1d1e18;
+  --text-color: #f2f1ec;
+  --deemphasis-text-color: #959580;
+  --accent-color: #db6c79;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  width: 60%;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--accent-color);
+}
+
+a:hover::before {
+  display: inline-block;
+  text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  body {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    width: 90%;
+  }
+}
+
+body.dark .astro-code,
+body.dark .astro-code span {
+  font-family: "Fira Code", monospace !important;
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+/* Utility Classes */
+.grow {
+  flex-grow: 1;
+}

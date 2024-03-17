@@ -1,17 +1,14 @@
 ---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import "../styles/main.css";
+
 interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-  alt?: string;
+  title: string;
+  description: string;
 }
 
-const {
-  title = "Jamalam's Site",
-  description = "Jamalam's portfolio, blog, and more.",
-  image,
-  alt,
-} = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
@@ -26,189 +23,21 @@ const {
     <meta name="og:description" content={description} />
     <meta name="og:type" content="website" />
     <meta name="og:url" content="https://jamalam.tech" />
-    {image && <meta name="og:image" content={image} />}
-    {image && alt && <meta name="og:image:alt" content={alt} />}
     <meta name="og:site_name" content="jamalam.tech" />
     <meta name="og:locale" content="en_US" />
-    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="/favicon.ico" />
-
-    <link rel="preconnect" href="https://fonts.bunny.net" />
-    <link
-      href="https://fonts.bunny.net/css?family=montserrat:200,400,600|jetbrains-mono:400&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <script
       data-goatcounter="https://jamalam.goatcounter.com/count"
       async
       src="//gc.zgo.at/count.js"
     ></script>
-
-    <!-- Small inline script for the navbar -->
-    <script>
-      window.addEventListener("DOMContentLoaded", () => {
-        let navbarList = document.getElementById("navbar-list")!;
-        document.getElementById("navbar-button")!.onclick = () => {
-          if (navbarList.classList.contains("hidden")) {
-            navbarList.classList.remove("hidden");
-          } else {
-            navbarList.classList.add("hidden");
-          }
-        };
-      });
-    </script>
-
-    <slot name="head" />
   </head>
-  <body
-    class="flex flex-col items-center w-full min-h-screen bg-white dark:bg-gray-900 dark:text-gray-100 font-montserrat"
-  >
-    <nav
-      class="w-full flex flex-row flex-wrap justify-between items-center pt-2.5 border-b border-slate-100 dark:border-gray-700 max-w-[150rem]"
-    >
-      <!-- Title -->
-      <a href="/" class="px-2.5 pb-2.5"><h1 class="text-2xl">Jamalam</h1></a>
-
-      <!-- Navigation -->
-      <button
-        id="navbar-button"
-        type="button"
-        class="inline-flex items-center pb-2.5 px-2.5 text-sm rounded-lg md:hidden"
-        aria-controls="navbar-list"
-        aria-expanded="false"
-      >
-        <span class="sr-only">Open navigation menu</span>
-        <svg
-          class="w-6 h-6"
-          aria-hidden="true"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-          ><path
-            fill-rule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </button>
-
-      <!-- Navbar -->
-      <div class="hidden w-full md:block md:w-auto" id="navbar-list">
-        <ul class="flex flex-col md:flex-row md:space-x-8">
-          {
-            [
-              ["/", "Home"],
-              ["/blog", "My Blog"],
-              ["/portfolio", "My Portfolio"],
-              ["/contact", "Contact Me"],
-            ].map((navlink) => (
-              <li>
-                <a
-                  href={navlink[0]}
-                  class={`block pl-4 md:pl-0 md:pr-2 py-3 md:py-0 md:pb-2.5 text-md ${
-                    navlink[0] == Astro.url.pathname && "font-semibold"
-                  } border-y md:border-none border-slate-100 uppercase dark:border-gray-700`}
-                  aria-current="page"
-                  rel="prefetch"
-                >
-                  {navlink[1]}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Content -->
-    <main class="min-h-[85vh] flex flex-col items-center max-w-[150rem] w-full">
-      <slot />
-    </main>
-
-    <!-- Footer -->
-    <footer
-      class="flex items-center justify-center space-x-6 py-4 flex-grow border-t border-slate-100 dark:border-gray-700 text-sm font-extralight w-full max-w-[150rem]"
-    >
-      <div>
-        <div id="theme-light">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-sun text-gray-700 dark:text-gray-300"
-            ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"
-            ></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"
-            ></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"
-            ></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"
-            ></path><path d="m19.07 4.93-1.41 1.41"></path></svg
-          >
-        </div>
-
-        <div id="theme-dark" class="hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-moon text-gray-700 dark:text-gray-300"
-            ><path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
-          >
-        </div>
-      </div>
-
-      <p>&copy Jamalam, {new Date().getFullYear()}</p>
-    </footer>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
   </body>
-
-  <script>
-    let light = document.getElementById("theme-light")!;
-    let dark = document.getElementById("theme-dark")!;
-
-    // Account for localStorage, then OS theme, then default to light
-    if (localStorage.getItem("theme") == "dark") {
-      document.documentElement.classList.add("dark");
-    } else if (localStorage.getItem("theme") == "light") {
-      document.documentElement.classList.remove("dark");
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-
-    if (document.documentElement.classList.contains("dark")) {
-      light.classList.remove("hidden");
-      dark.classList.add("hidden");
-    } else {
-      light.classList.add("hidden");
-      dark.classList.remove("hidden");
-    }
-
-    light.addEventListener("click", (e) => {
-      e.preventDefault();
-      light.classList.add("hidden");
-      dark.classList.remove("hidden");
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    });
-
-    dark.addEventListener("click", (e) => {
-      e.preventDefault();
-      dark.classList.add("hidden");
-      light.classList.remove("hidden");
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    });
-  </script>
 </html>

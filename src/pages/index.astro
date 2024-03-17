@@ -1,74 +1,103 @@
 ---
-import Heading from "../components/Heading.astro";
-import Hero from "../components/Hero.astro";
-import Link from "../components/Link.astro";
-import PostPreview from "../components/PostPreview.astro";
 import Page from "../layouts/Page.astro";
-import { getCollection } from "astro:content";
+import PostPreview from "../components/PostPreview.astro";
+import { getBlogPosts } from "../content/config";
 
-const posts = await getCollection("blog").then((a) =>
-  a
-    .filter((e) => !e.data.draft)
-    .sort(
-      (a, b) =>
-        new Date(a.data.publishDate).getTime() -
-        new Date(b.data.publishDate).getTime()
-    )
-    .slice(0, 3)
-);
+const recentPosts = await getBlogPosts().then((p) => p.slice(0, 3));
 ---
 
-<Page>
-  <Hero>
-    <!-- Profile Picture Background -->
-    <div
-      class="bg-white dark:bg-gray-700 drop-shadow-2xl duration-500 hover:drop-shadow-none p-2 mb-8 rounded-full"
-    >
-      <img
-        src="https://github.com/Jamalam360.png"
-        class="rounded-full w-48 aspect-square"
-        alt="Jamalam's profile picture."
-      />
-    </div>
-
-    <h2 class="text-3xl text-center uppercase">Avid software developer</h2>
-    <p class="text-2xl text-center font-extralight mx-8">
-      of mods, websites, and many things in between.
-    </p>
-  </Hero>
-
-  <!-- Main Content -->
-  <div class="w-full">
-    <!-- About Me -->
-    <Heading>About Me</Heading>
-    <p class="px-4 mb-4">
-      Hi! I'm Jamalam, or James. I'm a young developer from the UK, and it looks
-      like you have stumbled across my site, welcome! :)
-    </p>
-    <p class="px-4 mb-4">
-      I've been programming for upwards of 5 years now, starting with Raspberry
-      Pi based robots with Python, then learning Java for Minecraft modding, and
-      now I'm playing around with web development, and Rust. You can find a
-      timeline of some of my projects on my <Link href="/portfolio">
-        portfolio
-      </Link> page.
-    </p>
-    <p class="px-4 mb-4">
-      When I'm not programming (0_0), I enjoy boats, engineering/product design,
-      and going for walks with <Link href="/dogs" rel="prefetch">my dogs</Link>. <span
-        class="text-blue-500">Sky blue</span
-      > is my favourite colour (although I'm colour blind), and I love indie rock.
-    </p>
-
-    <!-- Latest Blog Post List -->
-    <div class="w-full md:mb-8">
-      <Heading>Latest Blog Posts</Heading>
-      <p class="px-4 mb-8 text-center">
-        You can find more posts on the <Link href="/blog">blog</Link> page.
+<Page title="Jamalam's Site" description="">
+  <div class="hero">
+    <img class="profile-picture" src="https://github.com/Jamalam360.png" alt="Jamalam's profile picture" />
+    <div>
+      <h1>Lorem ipsum.</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, ratione? Mollitia ut expedita esse. Minima, eum
+        cupiditate natus in aut eaque dignissimos ipsa sint minus molestias ad laborum ex possimus?
       </p>
-      <div class="flex flex-col md:flex-row md:flex-wrap md:mx-16 space-y-8">
-        {posts.map((post) => <PostPreview {...post.data} slug={post.slug} />)}
-      </div>
     </div>
   </div>
+
+  <div class="socials-wrapper">
+    <div class="socials">
+      <a href="https://github.com/Jamalam360">GitHub</a>
+      <a href="https://ko-fi.com/jamalamdev">Ko-Fi</a>
+      <a href="https://modrinth.com/user/jamalam">Modrinth</a>
+      <a href="https://curseforge.com/members/jamalam360">Curseforge</a>
+      <a href="https://maven.jamalam.tech">Maven</a>
+      <a href="https://status.jamalam.tech">Service Status</a>
+    </div>
+  </div>
+
+  <h1>Recent Posts</h1>
+  {recentPosts.map((post) => <PostPreview post={post} />)}
+  <p class="see-more"><a href="/blog">See more...</a></p>
 </Page>
+
+<style>
+  .hero {
+    width: 80%;
+    margin: 4rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-picture {
+    width: 16rem;
+    border-radius: 50%;
+  }
+
+  .socials-wrapper {
+    width: 100%;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 2rem auto;
+    font-size: 1.5rem;
+  }
+
+  .socials a {
+    color: var(--text-color);
+  }
+
+  .socials a ~ a:before {
+    content: "•";
+    margin: 0 0.75rem;
+  }
+
+  .see-more {
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 800px) {
+    .hero {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+      margin: 1rem auto;
+    }
+
+    .profile-picture {
+      width: 12rem;
+    }
+
+    .socials {
+      justify-content: center;
+      width: 80%;
+      margin: 1rem auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .socials {
+      width: 100%;
+      font-size: 1.25rem;
+    }
+  }
+</style>
