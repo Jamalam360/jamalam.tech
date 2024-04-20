@@ -27,4 +27,7 @@ export default defineConfig({
   },
   output: "server",
   adapter: cloudflare(),
+  redirects: {
+    "/discord": "https://discord.gg/88PWg5TySd",
+  }
 });
