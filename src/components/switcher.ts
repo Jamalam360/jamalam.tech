@@ -1,5 +1,5 @@
 const updateText = (switcher: HTMLParagraphElement, dark: boolean) => {
-  switcher.textContent = dark ? "Let there be light" : "Bring on the darkness";
+  switcher.textContent = dark ? "Light Mode" : "Dark Mode";
 };
 
 function getLocalStoragePreference(): boolean | null {
