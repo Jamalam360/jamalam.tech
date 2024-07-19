@@ -8,33 +8,33 @@ const posts = await getCollection("blog");
 ---
 
 <Layout>
-  <main>
-    <div class="hero">
-      <h1>Jamalam</h1>
-      <span style="flex-grow: 1;"></span>
+  <main class="m-8 md:m-40 md:w-1/2">
+    <div id="hero" class="flex items-center">
+      <h1 class="text-5xl font-semibold">Jamalam</h1>
+      <span class="flex-grow"></span>
       <a href="https://github.com/Jamalam360"><GitHub /></a>
       <a href="https://mastodon.social/@jamalam"><Twitter /></a>
     </div>
 
-    <h2>
+    <h2 class="mt-4">
       👋 Hi! I'm James, or Jamalam. I'm a developer currently primarily working
       on Minecraft modding.
     </h2>
 
-    <div class="links">
+    <div class="mt-8 flex flex-col gap-4 md:flex-row">
       <div class="link portfolio">Portfolio</div>
       <div class="link discord">Discord</div>
       <div class="link email">Email</div>
     </div>
 
-    <div class="posts">
+    <div id="posts" class="flex flex-col mt-2">
       {
         posts.map((post) => (
-          <article>
+          <article class="mt-8">
             <a href={`/blog/${post.slug}`}>
-              <h3>{post.data.title}</h3>
+              <h3 class="text-2xl">{post.data.title}</h3>
             </a>
-            <p class="date">{post.data.date}</p>
+            <p class="text-sm mb-4">{post.data.date}</p>
             <p>{post.data.summary}</p>
           </article>
         ))
@@ -44,32 +44,12 @@ const posts = await getCollection("blog");
 </Layout>
 
 <style>
-  main {
-    width: 50%;
-  }
-
-  .hero {
-    display: flex;
-    align-items: center;
-  }
-
-  .hero a {
-    margin-left: 2rem;
-    transform: scale(1.5);
-  }
-
-  .links {
-    display: flex;
-    gap: 1em;
+  #hero a {
+    @apply ml-8 scale-150;
   }
 
   .link {
-    text-align: center;
-    padding: 0.5em 1em;
-    border-radius: 0.5em;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
+    @apply text-center py-2 px-4 rounded-md font-semibold uppercase cursor-pointer;
   }
 
   .portfolio {
@@ -82,26 +62,5 @@ const posts = await getCollection("blog");
 
   .email {
     background-color: #0ea5e9;
-  }
-
-  .posts {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-  }
-
-  .posts article {
-    margin-top: 2rem;
-  }
-
-  .date {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    main {
-      width: 100%;
-    }
   }
 </style>
