@@ -1,0 +1,107 @@
+---
+import Layout from "../layouts/Layout.astro";
+import GitHub from "../components/GitHub.astro";
+import Twitter from "../components/Twitter.astro";
+import { getCollection, getEntry } from "astro:content";
+
+const posts = await getCollection("blog");
+---
+
+<Layout>
+  <main>
+    <div class="hero">
+      <h1>Jamalam</h1>
+      <span style="flex-grow: 1;"></span>
+      <a href="https://github.com/Jamalam360"><GitHub /></a>
+      <a href="https://mastodon.social/@jamalam"><Twitter /></a>
+    </div>
+
+    <h2>
+      👋 Hi! I'm James, or Jamalam. I'm a developer currently primarily working
+      on Minecraft modding.
+    </h2>
+
+    <div class="links">
+      <div class="link portfolio">Portfolio</div>
+      <div class="link discord">Discord</div>
+      <div class="link email">Email</div>
+    </div>
+
+    <div class="posts">
+      {
+        posts.map((post) => (
+          <article>
+            <a href={`/blog/${post.slug}`}>
+              <h3>{post.data.title}</h3>
+            </a>
+            <p class="date">{post.data.date}</p>
+            <p>{post.data.summary}</p>
+          </article>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    width: 50%;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero a {
+    margin-left: 2rem;
+    transform: scale(1.5);
+  }
+
+  .links {
+    display: flex;
+    gap: 1em;
+  }
+
+  .link {
+    text-align: center;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .portfolio {
+    background-color: #16a34a;
+  }
+
+  .discord {
+    background-color: #5865f2;
+  }
+
+  .email {
+    background-color: #0ea5e9;
+  }
+
+  .posts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .posts article {
+    margin-top: 2rem;
+  }
+
+  .date {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    main {
+      width: 100%;
+    }
+  }
+</style>

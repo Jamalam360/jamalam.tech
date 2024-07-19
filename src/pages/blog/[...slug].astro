@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout>
+  <article>
+    <a href="/">&lt Back</a>
+    <h1>{entry.data.title}</h1>
+    <div class="prose prose-invert prose-green max-w-none prose-h2:m-0">
+      <Content />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  article {
+    width: 50%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+</style>
