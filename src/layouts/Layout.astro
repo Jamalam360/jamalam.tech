@@ -8,8 +8,12 @@
     <meta name="generator" content={Astro.generator} />
     <title>Jamalam</title>
   </head>
-  <body class="text-white text-xl">
+  <body class="text-white text-base">
     <slot />
+
+    <footer class="text-center px-8 mx-auto md:px-0 md:mx-40 md:w-1/2">
+      Support me on <a href="https://ko-fi.com/jamalamdev">Ko-fi</a> or use code <span class="text-green-500">jamalam</span> at <a href="https://bisecthosting.com/jamalam">BisectHosting</a> ❤️
+    </footer>
   </body>
 </html>
 
@@ -21,5 +25,9 @@
       rgba(0, 0, 0, 1) 50%,
       rgba(7, 37, 19, 1) 100%
     );
+  }
+
+  a {
+    @apply font-medium underline text-green-500;
   }
 </style>

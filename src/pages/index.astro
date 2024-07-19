@@ -21,10 +21,10 @@ const posts = await getCollection("blog");
       on Minecraft modding.
     </h2>
 
-    <div class="mt-8 flex flex-col gap-4 md:flex-row">
-      <div class="link portfolio">Portfolio</div>
-      <div class="link discord">Discord</div>
-      <div class="link email">Email</div>
+    <div id="links" class="mt-8 flex flex-col gap-4 md:flex-row">
+      <a href="TODO"><div class="link portfolio">Portfolio</div></a>
+      <a href="https://discord.jamalam.tech"><div class="link discord">Discord</div></a>
+      <a href="mailto:james@jamalam.tech"><div class="link email">Email</div></a>
     </div>
 
     <div id="posts" class="flex flex-col mt-2">
@@ -48,8 +48,12 @@ const posts = await getCollection("blog");
     @apply ml-8 scale-150;
   }
 
+  #links a {
+    @apply no-underline;
+  }
+
   .link {
-    @apply text-center py-2 px-4 rounded-md font-semibold uppercase cursor-pointer;
+    @apply text-center text-white py-2 px-4 rounded-md font-semibold uppercase cursor-pointer;
   }
 
   .portfolio {
