@@ -8,10 +8,12 @@
     <meta name="generator" content={Astro.generator} />
     <title>Jamalam</title>
   </head>
-  <body class="text-white text-base">
+  <body class="min-h-screen flex flex-col text-white text-base bg-gradient-to-b from-black via-50% via-black to-[#072513] md:bg-gradient-to-r">
     <slot />
 
-    <footer class="text-center px-8 mx-auto md:px-0 md:mx-40 md:w-1/2">
+    <div class="flex-grow" />
+
+    <footer class="text-center my-8 px-8 mx-auto md:px-0 md:mx-40 md:w-1/2">
       Support me on <a href="https://ko-fi.com/jamalamdev">Ko-fi</a> or use code <span class="text-green-500">jamalam</span> at <a href="https://bisecthosting.com/jamalam">BisectHosting</a> ❤️
     </footer>
   </body>
