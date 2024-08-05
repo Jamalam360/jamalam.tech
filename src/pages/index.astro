@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import GitHub from "../components/GitHub.astro";
 import Twitter from "../components/Twitter.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
 ---
