@@ -6,6 +6,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   redirects: {
-    "/discord": "https://discord.jamalam.tech",
+    "/discord": "https://discord.gg/88PWg5TySd",
   }
 });
