@@ -18,7 +18,9 @@ const { Content } = await entry.render();
   <article class="m-8 md:m-40 md:w-1/2">
     <a href="/">&lt Back</a>
     <h1 class="text-3xl my-4">{entry.data.title}</h1>
-    <div class="prose prose-invert prose-green text-white max-w-none prose-h2:m-0 ">
+    <div
+      class="prose prose-invert prose-green text-white max-w-none prose-h2:m-0"
+    >
       <Content />
     </div>
   </article>

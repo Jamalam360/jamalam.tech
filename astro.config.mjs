@@ -10,5 +10,5 @@ export default defineConfig({
   integrations: [],
   redirects: {
     "/discord": "https://discord.gg/88PWg5TySd",
-  }
+  },
 });
