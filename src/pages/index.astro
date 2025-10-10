@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import GitHub from "../components/GitHub.astro";
-import Twitter from "../components/Twitter.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
@@ -9,11 +8,9 @@ const posts = await getCollection("blog");
 
 <Layout>
   <main class="m-8 md:m-40 md:w-1/2">
-    <div id="hero" class="flex items-center">
+    <div id="hero" class="flex items-center space-x-4">
       <h1 class="text-5xl font-semibold">Jamalam</h1>
-      <span class="flex-grow"></span>
       <a href="https://github.com/Jamalam360"><GitHub /></a>
-      <a href="https://mastodon.social/@jamalam"><Twitter /></a>
     </div>
 
     <h2 class="mt-4">
@@ -44,6 +41,8 @@ const posts = await getCollection("blog");
 </Layout>
 
 <style>
+  @reference "../styles/global.css";
+
   #hero a {
     @apply ml-8 scale-150;
   }

@@ -1,3 +1,7 @@
+---
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,7 +12,7 @@
     <meta name="generator" content={Astro.generator} />
     <title>Jamalam</title>
   </head>
-  <body class="min-h-screen flex flex-col text-white text-base bg-gradient-to-b from-black via-70% via-black to-[#072513] md:bg-gradient-to-r">
+  <body class="min-h-screen flex flex-col font-inter text-white text-base bg-gradient-to-b from-black via-70% via-black to-[#072513] md:bg-gradient-to-r">
     <slot />
 
     <div class="flex-grow" />
@@ -18,18 +22,3 @@
     </footer>
   </body>
 </html>
-
-<style is:global>
-  body {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 50%,
-      rgba(7, 37, 19, 1) 100%
-    );
-  }
-
-  a {
-    @apply font-medium underline text-green-500;
-  }
-</style>

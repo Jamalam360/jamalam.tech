@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
+
+@theme {
+	--font-inter: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(7, 37, 19, 1) 100%
+  );
+}
+
+a {
+  @apply font-medium underline text-green-500;
+}
