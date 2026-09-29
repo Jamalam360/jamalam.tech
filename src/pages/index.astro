@@ -18,7 +18,6 @@ const posts = await getCollection("blog");
     </h2>
 
     <div id="links" class="mt-8 flex flex-col gap-4 md:flex-row">
-      <a href="/portfolio.pdf"><div class="link portfolio">Portfolio</div></a>
       <a href="https://discord.jamalam.tech"><div class="link discord">Discord</div></a>
       <a href="mailto:james@jamalam.tech"><div class="link email">Email</div></a>
     </div>
@@ -53,11 +52,7 @@ const posts = await getCollection("blog");
   .link {
     @apply text-center text-white py-2 px-4 rounded-md font-semibold uppercase cursor-pointer;
   }
-
-  .portfolio {
-    background-color: #16a34a;
-  }
-
+  
   .discord {
     background-color: #5865f2;
   }
