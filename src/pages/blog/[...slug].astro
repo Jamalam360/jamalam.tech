@@ -25,3 +25,28 @@ const { Content } = await render(entry);
     </div>
   </article>
 </Layout>
+
+<script>
+  document.querySelectorAll<HTMLPreElement>(".prose pre").forEach((pre) => {
+    const code = pre.querySelector("code");
+    const text = code?.textContent ?? "";
+    const wrapper = document.createElement("div");
+    wrapper.className = "relative";
+    pre.parentNode?.insertBefore(wrapper, pre);
+    wrapper.appendChild(pre);
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = "Copy";
+    button.className =
+      "absolute top-2 right-2 rounded bg-white/10 px-2 py-1 text-xs opacity-60 transition hover:opacity-100 hover:bg-white/20 focus:opacity-100";
+
+    button.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(text);
+      button.textContent = "Copied!";
+      setTimeout(() => (button.textContent = "Copy"), 2000);
+    });
+
+    wrapper.appendChild(button);
+  });
+</script>
