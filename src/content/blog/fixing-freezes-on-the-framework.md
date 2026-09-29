@@ -1,7 +1,8 @@
 ---
 title: Fixing Freezes on Fedora with the Framework
 summary: Details on the method that helped me fix the freezes and visual glitches I faced on my Framework.
-date: November 2nd, 2022
+date: "2022-11-02"
+human-date: November 2nd, 2022
 ---
 
 My new Framework laptop initially had some freezes and visual glitches on
