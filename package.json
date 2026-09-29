@@ -10,12 +10,12 @@
     "fmt": "prettier . --write"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^5.18.2",
+    "astro": "^7.3.5",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^0.14.1"
   }

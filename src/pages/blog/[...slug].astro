@@ -1,22 +1,22 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
   return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Layout>
   <article class="m-8 md:m-40 md:w-1/2">
-    <a href="/">&lt Back</a>
+    <a href="/">&lt; Back</a>
     <h1 class="text-3xl my-4">{entry.data.title}</h1>
     <div
       class="prose prose-invert prose-green text-white max-w-none prose-h2:m-0"
